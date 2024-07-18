@@ -1,0 +1,278 @@
+@media (max-width: 1224px) {
+    .overlay-content {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        
+    }
+    .card-container {
+        flex-direction: column; 
+        margin-top: 60px;
+        position: relative;
+        top: auto;
+        align-items: center;
+        height: auto !important; 
+        padding: 20px 0;
+        width: 100%;
+        
+    }
+    .card {
+        width: 90% !important; 
+        margin-bottom: 20px;
+    }
+
+    .number-widget {
+        flex-direction: column; 
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .number-item {
+        width: 80%; 
+        margin: 10px 0; 
+    }
+
+    .favorites {
+        flex-direction: column; 
+    }
+
+    .faves {
+        width: 90%; 
+        margin-bottom: 20px; 
+    }
+
+    .online-pay {
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .mobile-pay, .bank-pay {
+        width: 90%; 
+        margin: 10px 0; 
+    }
+    
+}
+@media (max-width: 768px) {
+    .homeContainer {
+        display: flex;
+        flex-direction: column;
+        height: auto ;
+    }
+    .overlay-content {
+        position: relative;
+        width: 100%;
+        height: fit-content ;
+        padding-top: 80px;
+        z-index: 0;
+    }
+    .card-container {
+      margin-top: 600px;
+    }
+}
+.all-contain {
+    background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\abswhite.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.homeContainer {
+    position: relative;
+    width: auto;
+    height: 380px;
+    overflow: visible;
+}
+.weldbg {
+    width: 100%;
+    height: 380px;
+    object-fit: cover; 
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, white 100%);
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(49, 54, 40, 0.5);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+.overlay-content {
+    position: absolute;
+    color: white;
+    top: 0;
+    right: 0;
+    width: 50%;
+    padding: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: justify;
+    z-index: 20;
+}
+
+.card-container {
+    position: absolute;
+    top: 400px;
+    width: 97%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    z-index: 3;
+    overflow-x: hidden;
+}
+
+.card {
+    width: 420px;
+    height: 200px;
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7); 
+}
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.card button {
+    position: absolute;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 20px;
+    background-color: #CADF9E;
+    border: none;
+    cursor: pointer;
+}
+.card button:hover {
+    background-color: #A8C374;
+}
+.number-widget {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 250px;
+    align-items: center;
+    justify-content: center;
+    background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\homecount.jpeg");
+
+}
+.number-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 170px;
+    width: 250px;
+    border-radius: 20px;
+    background-color: #FF9F1C;
+    color: #313628;
+    margin: 20px;
+    padding: 10px;
+}
+.number-item img {
+    height: 70px;
+    width: 70px;
+}
+.featured-products {
+    height: 540px;
+    text-align: center;
+    margin-top: 20vh;
+    color: #313628;
+}
+
+.favorites {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.favorites img {
+    width: 300px;
+    height: auto;
+}
+.faves {
+    width: 30%;
+    text-align: center;
+}
+.faves button {
+    background-color: #FF9F1C;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    height: 50px;
+    font-weight: bold;
+}
+.payment-details {
+    height: 300px;
+    text-align: center;
+    color: #313628;
+   
+}
+.online-pay {
+    display: flex;
+    height: 300px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.mobile-pay {
+    width: 25%;
+    background-color: #58b44c; 
+    border-radius: 20px;
+    margin-right: 20px;
+}
+.bank-pay {
+    width: 25%;
+    background-color: #2596be;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+.pay-logo {
+    height: 90px;
+    width: 90px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.pay-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.account-label {
+    margin-right: 20px;
+}
+.transport-area {
+    height: 200px;
+    margin-top: 200px;
+}
+.transport-area h4 {
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    color: #FF9F1C;
+    text-align: center;
+}
+.transport-area h2 {
+    font-family: 'Lobster' , cursive;
+    font-size: 30px;
+    text-align: center;
+    color: #313628;
+}
+

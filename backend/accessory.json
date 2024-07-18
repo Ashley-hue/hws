@@ -1,0 +1,729 @@
+[
+  {
+    "filename": "eaglemet.png",
+    "name": "Eagle Helmet",
+    "description": "Auto-darkening Welding Helmet",
+    "category": "Helmet",
+    "details": [
+      "Custom designs",
+      "Adjustable shading",
+      "High impact resistance"
+    ]
+  },
+  {
+    "filename": "oxyreg.png",
+    "name": "Oxygen Regulator",
+    "description": "O2 Regulator",
+    "category": "Regulator",
+    "details": [
+      "Precise pressure control",
+      "Durable construction",
+      "Easy-to-read gauge"
+    ]
+  },
+  {
+    "filename": "acereg.png",
+    "name": "Acetylene Regulator",
+    "description": "Acetylene Regulator",
+    "category": "Regulator",
+    "details": [
+      "Adjustable pressure settings",
+      "Safety features for acetylene",
+      "Durable build"
+    ]
+  },
+  {
+    "filename": "coreg.png",
+    "name": "CO2 Regulator",
+    "description": "CO2 Regulator",
+    "category": "Regulator",
+    "details": [
+      "Accurate pressure regulation",
+      "Robust and reliable",
+      "High-quality materials"
+    ]
+  },
+  {
+    "filename": "weldinggloves.png",
+    "name": "D&H Gloves",
+    "description": "Welding Gloves",
+    "category": "Gloves",
+    "details": ["Heat-resistant", "Durable leather", "Comfortable fit"]
+  },
+  {
+    "filename": "glovy.png",
+    "name": "Gloves",
+    "description": "Welding Gloves",
+    "category": "Gloves",
+    "details": ["Heat-resistant", "Durable leather", "Comfortable fit"]
+  },
+  {
+    "filename": "weldapr.png",
+    "name": "Apron",
+    "description": "Welding Apron",
+    "category": "Apron",
+    "details": [
+      "Heat-resistant material",
+      "Full coverage protection",
+      "Adjustable fit"
+    ]
+  },
+  {
+    "filename": "apron.png",
+    "name": "Leather Apron",
+    "description": "Welding Apron",
+    "category": "Apron",
+    "details": [
+      "Heat-resistant material",
+      "Full coverage protection",
+      "Adjustable fit"
+    ]
+  },
+  {
+    "filename": "Wirebrush.png",
+    "name": "Wire Brush",
+    "description": "Wire Brush",
+    "category": "Brush",
+    "details": [
+      "Sturdy bristles",
+      "Comfortable handle",
+      "Effective rust and paint removal"
+    ]
+  },
+  {
+    "filename": "darkg.png",
+    "name": "Goggles",
+    "description": "Flip Type Dark Goggles",
+    "category": "Goggles",
+    "details": ["Adjustable darkness", "Flip-up design", "Comfortable fit"]
+  },
+  {
+    "filename": "electrodeholder.png",
+    "name": "Electrode Holder",
+    "description": "Crocodile Electrode Holder",
+    "category": "Electrode Holder",
+    "details": ["Firm grip", "Heat-resistant", "Durable construction"]
+  },
+  {
+    "filename": "measuretape.png",
+    "name": "Measuring Tape",
+    "description": "Stanley Measuring Tape",
+    "category": "Tape",
+    "details": [
+      "Accurate measurements",
+      "Durable casing",
+      "Easy-to-read markings"
+    ]
+  },
+  {
+    "filename": "loctite.png",
+    "name": "Loctite 271",
+    "description": "Loctite",
+    "category": "Glue",
+    "details": [
+      "High-temperature resistant",
+      "Suitable for sealing and bonding",
+      "Fast curing time",
+      "Strong adhesion properties",
+      "Durable and flexible bond"
+    ]
+  },
+  {
+    "filename": "grindisc.png",
+    "name": "Grinding Disc 7 Inch",
+    "description": "Grinding Disc",
+    "category": "Grinding",
+    "details": [
+      "High material removal rate",
+      "Long-lasting performance",
+      "Suitable for different surfaces",
+      "Reduced heat buildup"
+    ]
+  },
+  {
+    "filename": "grind.png",
+    "name": "Grinding Disc  4 Inch",
+    "description": "Grinding Disc",
+    "category": "Grinding",
+    "details": [
+      "High material removal rate",
+      "Long-lasting performance",
+      "Suitable for different surfaces",
+      "Reduced heat buildup"
+    ]
+  },
+  {
+    "filename": "cutdis.png",
+    "name": "Cutting Disc 7 Inch",
+    "description": "Cutting Disc",
+    "category": "Cutting",
+    "details": [
+      "High precision cutting",
+      "Long-lasting performance",
+      "Suitable for various materials",
+      "Minimal vibration"
+    ]
+  },
+  {
+    "filename": "cuttd.png",
+    "name": "Cutting Disc 12 Inch",
+    "description": "Cutting Disc",
+    "category": "Cutting",
+    "details": [
+      "High precision cutting",
+      "Long-lasting performance",
+      "Suitable for various materials",
+      "Minimal vibration"
+    ]
+  },
+  {
+    "filename": "shield.png",
+    "name": "Plain Helmet",
+    "description": "Welding Helmet",
+    "category": "Helmet",
+    "details": ["Adjustable shading", "Lightweight", "High impact resistance"]
+  },
+  {
+    "filename": "darkweldingglass.png",
+    "name": "Dark Welding Glass",
+    "description": "Dark Welding Glass",
+    "category": "Glass",
+    "details": [
+      "High heat resistance",
+      "Provides protection from intense light and UV radiation",
+      "Durable and scratch-resistant",
+      "Various shades available for different levels of darkness"
+    ]
+  },
+  {
+    "filename": "clearweldglass.png",
+    "name": "Clear Welding Glass",
+    "description": "Clear Welding Glass",
+    "category": "Glass",
+    "details": [
+      "High heat resistance",
+      "Durable and scratch-resistant",
+      "Provides protection from sparks and debris",
+      "Clear visibility"
+    ]
+  },
+  {
+    "filename": "goggles.png",
+    "name": "Clear Goggles",
+    "description": "Clear Welding Goggles",
+    "category": "Goggles",
+    "details": ["Clear visibility", "Durable lenses", "Comfortable fit"]
+  },
+  {
+    "filename": "goggle.png",
+    "name": "Goggles",
+    "description": "Flip Type Dark Goggles",
+    "category": "Goggles",
+    "details": ["Adjustable darkness", "Flip-up design", "Comfortable fit"]
+  },
+  {
+    "filename": "abradisk.png",
+    "name": "Abra Cutting Disc",
+    "description": "Cutting Disc 5 Inch",
+    "category": "Cutting",
+    "details": [
+      "High durability",
+      "Precise cutting performance",
+      "Suitable for various materials",
+      "Long-lasting"
+    ]
+  },
+  {
+    "filename": "boschgrind.png",
+    "name": "Bosch Angle Grinder",
+    "description": "Grinder",
+    "category": "Grinder",
+    "details": [
+      "High power output",
+      "Versatile cutting and grinding",
+      "Ergonomic design for comfort",
+      "Adjustable guard"
+    ]
+  },
+  {
+    "filename": "emtopgrind.png",
+    "name": "Emtop Angle Grinder",
+    "description": "Grinder",
+    "category": "Grinder",
+    "details": [
+      "High power output",
+      "Versatile cutting and grinding",
+      "Ergonomic design for comfort",
+      "Adjustable guard"
+    ]
+  },
+  {
+    "filename": "bheater.png",
+    "name": "Bosch Heat Gun",
+    "description": "Heater",
+    "category": "Grinder",
+    "details": [
+      "Variable temperature settings",
+      "Multiple airflow settings",
+      "Overheat protection",
+      "Wide range of nozzle attachments"
+    ]
+  },
+  {
+    "filename": "sander.png",
+    "name": "Bosch Orbital Sander",
+    "description": "Bosch Sander",
+    "category": "Grinder",
+    "details": [
+      "High-performance motor",
+      "Variable speed control",
+      "Ergonomic design for comfort",
+      "Easy-to-change sanding pads"
+    ]
+  },
+  {
+    "filename": "solarhelmet.png",
+    "name": "Solar Helmet",
+    "description": "Solar Helmet Yellow & Green",
+    "category": "Goggles",
+    "details": [
+      "Solar-powered auto-darkening feature",
+      "Lightweight and comfortable fit",
+      "Adjustable shading levels",
+      "Durable construction"
+    ]
+  },
+  {
+    "filename": "weldgel.png",
+    "name": "Tip Guard Paste",
+    "description": "Welding Gel",
+    "category": "Gel",
+    "details": ["Protects torch tips", "Easy application", "Prolongs tip life"]
+  },
+  {
+    "filename": "clamp.png",
+    "name": "Earth Clamp",
+    "description": "Grey Earth Clamp",
+    "category": "Clamps",
+    "details": [
+      "Strong grip",
+      "Durable material",
+      "Reliable electrical contact",
+      ""
+    ]
+  },
+  {
+    "filename": "rnbpipe.png",
+    "name": "Twin Hose Pipe",
+    "description": "Red & Blue Twin Hose Pipe",
+    "category": "Pipe",
+    "details": [
+      "Dual-purpose hoses",
+      "Resistant to abrasion and weathering",
+      "Easy handling and flexible"
+    ]
+  },
+  {
+    "filename": "piipe.png",
+    "name": "Welding Cable",
+    "description": "Black Welding Cable",
+    "category": "Pipe",
+    "details": [
+      "Durable construction",
+      "High current carrying capacity",
+      "Flexible and insulated"
+    ]
+  },
+  {
+    "filename": "574.png",
+    "name": "Loctite 574",
+    "description": "Loctite",
+    "category": "Glue",
+    "details": [
+      "Seals close-fitting joints between rigid metal faces ",
+      " High oil tolerance ",
+      " Forms a flexible, durable seal ",
+      " Ideal for flange sealing"
+    ]
+  },
+  {
+    "filename": "603.png",
+    "name": "Loctite 603",
+    "description": "Loctite",
+    "category": "Glue",
+    "details": [
+      "High-strength retaining compound ",
+      "Tolerates minor surface contamination ",
+      " Ideal for bonding cylindrical fitting parts ",
+      " Prevents loosening due to vibration"
+    ]
+  },
+  {
+    "filename": "609.png",
+    "name": "Loctite 609",
+    "description": "Loctite",
+    "category": "Glue",
+    "details": [
+      "High-strength retaining compound",
+      "For cylindrical assemblies",
+      "Tolerates slight surface contamination",
+      "Withstands high dynamic loads"
+    ]
+  },
+  {
+    "filename": "638.png",
+    "name": "Loctite 638",
+    "description": "Loctite",
+    "category": "Glue",
+    "details": [
+      "High-strength retaining compound",
+      "Gap-filling properties",
+      "Tolerates minor contamination",
+      "High temperature resistance"
+    ]
+  },
+  {
+    "filename": "641.png",
+    "name": "Loctite 641",
+    "description": "Loctite",
+    "category": "Glue",
+    "details": [
+      "Medium-strength retaining compound",
+      "Ideal for cylindrical parts requiring disassembly",
+      "Tolerates slight contamination",
+      "Provides controlled strength"
+    ]
+  },
+  {
+    "filename": "241.png",
+    "name": "Loctite 241",
+    "description": "Loctite",
+    "category": "Glue",
+    "details": ["", "", "", ""]
+  },
+  {
+    "filename": "loctite641.png",
+    "name": "Loctite 641",
+    "description": "Loctite",
+    "category": "Glue",
+    "details": [
+      "Medium-strength retaining compound",
+      "Ideal for cylindrical parts requiring disassembly",
+      "Tolerates slight contamination",
+      "Provides controlled strength"
+    ]
+  },
+  {
+    "filename": "cabletie.png",
+    "name": "Cable Tie",
+    "description": "White Cable Tie",
+    "category": "Cable Tie",
+    "details": [
+      "Strong and durable",
+      "Self-locking mechanism",
+      "Resistant to corrosion and chemicals"
+    ]
+  },
+  {
+    "filename": "loctite326.png",
+    "name": "Loctite 326",
+    "description": "Loctite",
+    "category": "Glue",
+    "details": [
+      "Structural bonding adhesive",
+      "High peel strength",
+      "Rapid fixture time",
+      "Suitable for bonding magnets"
+    ]
+  },
+  {
+    "filename": "spray.png",
+    "name": "Welding Spray",
+    "description": "Wurth Welding Spray",
+    "category": "Welding Spray",
+    "details": [
+      "Anti-spatter protection",
+      "Easy application",
+      "Reduces cleanup time"
+    ]
+  },
+  {
+    "filename": "bluetungsten.png",
+    "name": "Tungsten",
+    "description": "Blue Tungsten",
+    "category": "Tungsten",
+    "details": ["High-quality tungsten", "Long-lasting"]
+  },
+  {
+    "filename": "redtungsten.png",
+    "name": "Tungsten",
+    "description": "Red Tungsten",
+    "category": "Tungsten",
+    "details": ["High-quality tungsten", "Long-lasting"]
+  },
+  {
+    "filename": "nozzlegel.png",
+    "name": "Nozzle Gel",
+    "description": "Wesaf Anti Spatter Nozzle Gel",
+    "category": "Gel",
+    "details": ["Protects torch tips", "Easy application", "Prolongs tip life"]
+  },
+  {
+    "filename": "flapdisc.png",
+    "name": "Pegatec 4 1/2 Inch",
+    "description": "Cutting Disc",
+    "category": "Cutting",
+    "details": [
+      "High cutting efficiency",
+      "Durable construction",
+      "Suitable for a variety of materials",
+      "Low vibration"
+    ]
+  },
+  {
+    "filename": "reddisc.png",
+    "name": "300 Fibre Disc",
+    "description": "Fibre Disc",
+    "category": "Fibre Disc",
+    "details": [
+      "High abrasion resistance",
+      "Efficient material removal",
+      "Various grit sizes available"
+    ]
+  },
+  {
+    "filename": "fibrerust.png",
+    "name": "3000 Fibre Disc",
+    "description": "Fibre Disc",
+    "category": "Fibre Disc",
+    "details": [
+      "High abrasion resistance",
+      "Efficient material removal",
+      "Various grit sizes available"
+    ]
+  },
+  {
+    "filename": "blackdisc.png",
+    "name": "1000 Fibre Disc",
+    "description": "Fibre Disc",
+    "category": "Fibre Disc",
+    "details": [
+      "High abrasion resistance",
+      "Efficient material removal",
+      "Various grit sizes available"
+    ]
+  },
+  {
+    "filename": "fibreblue.png",
+    "name": "2000 Fibre Disc",
+    "description": "Fibre Disc",
+    "category": "Fibre Disc",
+    "details": [
+      "High abrasion resistance",
+      "Efficient material removal",
+      "Various grit sizes available"
+    ]
+  },
+  {
+    "filename": "gdiffusor.png",
+    "name": "Gas Diffusor",
+    "description": "Diffusor",
+    "category": "Mig Parts",
+    "details": [
+      "Efficient gas distribution",
+      "Durable construction",
+      "Easy installation"
+    ]
+  },
+  {
+    "filename": "diffusor.png",
+    "name": "Gas diffusor",
+    "description": "diffusor",
+    "category": "Mig Parts",
+    "details": [
+      "Efficient gas distribution",
+      "Durable construction",
+      "Easy installation"
+    ]
+  },
+  {
+    "filename": "gas-diffusor.png",
+    "name": "Gas Diffusor",
+    "description": "Diffusor",
+    "category": "Mig Parts",
+    "details": [
+      "Efficient gas distribution",
+      "Durable construction",
+      "Easy installation"
+    ]
+  },
+  {
+    "filename": "ceramic-nozzle.png",
+    "name": "Ceramic Nozzle",
+    "description": "Pink Ceramic Nozzle",
+    "category": "Tig Parts",
+    "details": [
+      "High temperature resistance",
+      "Durable material",
+      "Precision gas flow"
+    ]
+  },
+  {
+    "filename": "backcap.png",
+    "name": "Back Cap",
+    "description": "Back Cap",
+    "category": "Tig Parts",
+    "details": ["Durable construction", "Secure fit", "Heat-resistant"]
+  },
+  {
+    "filename": "collet.png",
+    "name": "Collet",
+    "description": "Collet",
+    "category": "Tig Parts",
+    "details": [
+      "High precision gripping",
+      "Durable material",
+      "Versatile sizes"
+    ]
+  },
+  {
+    "filename": "colletbody.png",
+    "name": "Collet Body",
+    "description": "Collet Body",
+    "category": "Tig Parts",
+    "details": [
+      "Precision threading",
+      "High durability",
+      "Compatible with various torches"
+    ]
+  },
+  {
+    "filename": "contacttip.png",
+    "name": "Contact Tip",
+    "description": "Contact Tip",
+    "category": "Mig Parts",
+    "details": [
+      "High conductivity",
+      "Wear-resistant",
+      "Compatible with various welding machines"
+    ]
+  },
+  {
+    "filename": "insulator.png",
+    "name": "Insulator",
+    "description": "Insulator",
+    "category": "Mig Parts",
+    "details": [
+      "Heat-resistant material",
+      "Electrical insulation properties",
+      "Durable and reliable"
+    ]
+  },
+  {
+    "filename": "contacttipholder.png",
+    "name": "Contact Tip Holder",
+    "description": "Contact Tip Holder",
+    "category": "Mig Parts",
+    "details": [
+      "Secure fit for contact tips",
+      "Durable & heat-resistant",
+      "Easy to replace"
+    ]
+  },
+  {
+    "filename": "swanneck.png",
+    "name": "Swan Neck",
+    "description": "Swan Neck",
+    "category": "Mig Parts",
+    "details": [
+      "Flexible Design",
+      "High durability",
+      "Compatible with various torches"
+    ]
+  },
+  {
+    "filename": "tigtorch.png",
+    "name": "Tig torch",
+    "description": "Tig Torch",
+    "category": "Tig Parts",
+    "details": [
+      "Precision control for high-quality welds",
+      "Air-cooled and water-cooled options",
+      "Flexible head for better accessibility",
+      "Available in different lengths and capacities",
+      "Compatible with various TIG welding machines"
+    ]
+  },
+  {
+    "filename": "migtorch.png",
+    "name": "Mig Torch",
+    "description": "Mig Torch",
+    "category": "Mig Parts",
+    "details": [
+      "High durability and heat resistance",
+      "Swivel neck for flexible positioning",
+      "Replaceable contact tips and nozzles",
+      "Efficient gas flow for clean welds",
+      "Easy to maintain and service",
+      "Suitable for various MIG welding applications"
+    ]
+  },
+  {
+    "filename": "firehelmet.png",
+    "name": "Fire Welding Helmet",
+    "description": "Auto-darkening Welding Helmet",
+    "category": "Helmet",
+    "details": [
+      "Custom designs",
+      "Adjustable shading",
+      "High impact resistance"
+    ]
+  },
+  {
+    "filename": "gauge.png",
+    "name": "Welding Gauge",
+    "description": "Welding Gauge",
+    "category": "Gauge",
+    "details": ["High Accuracy", "Durable construction", "Easy-to-read"]
+  },
+  {
+    "filename": "wgauge.png",
+    "name": "Welding Gauge",
+    "description": "Welding Gauge",
+    "category": "Gauge",
+    "details": ["High Accuracy", "Durable construction", "Easy-to-read"]
+  },
+  {
+    "filename": "orweldpipe.png",
+    "name": "Welding Cable",
+    "description": "Orange Welding Cable",
+    "category": "Pipe",
+    "details": [
+      "Durable construction",
+      "High current carrying capacity",
+      "Flexible and insulated"
+    ]
+  },
+  {
+    "filename": "orpipe.png",
+    "name": "Welding Cable",
+    "description": "Orange Welding Cable",
+    "category": "Pipe",
+    "details": [
+      "Durable construction",
+      "High current carrying capacity",
+      "Flexible and insulated"
+    ]
+  },
+  {
+    "filename": "aircompress.png",
+    "name": "Air Compressor",
+    "description": "Air Compressor",
+    "category": "Compressor",
+    "details": [
+      "Maintenance-friendly design",
+      "Portable or stationary models",
+      "High-pressure air delivery"
+    ]
+  }
+]

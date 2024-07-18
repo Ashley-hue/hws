@@ -1,0 +1,319 @@
+[
+  {
+    "filename": "tig.png",
+    "name": "Tig Welder",
+    "description": "This is a tig welding machine",
+    "category": "Tig Machines",
+    "details": [
+      "Produces high-quality, precise welds",
+      "Ideal for welding thin materials",
+      "Capable of welding a variety of metals",
+      "Uses non-consumable tungsten electrode",
+      "Allows for control over heat input",
+      "Creates clean, visually appealing welds"
+    ]
+  },
+  {
+    "filename": "migmac.png",
+    "name": "Mig Welder",
+    "description": "Mig Welder 250 Amps",
+    "category": "Mig Machines",
+    "details": [
+      "Easy to use for beginners",
+      "High welding speed",
+      "Suitable for thin to thick materials",
+      "Continuous wire feed for smooth welding",
+      "Versatile, can weld various metals",
+      "Minimal spatter production"
+    ]
+  },
+  {
+    "filename": "inverter.png",
+    "name": "IMD 400 Spartan Inverter Welder",
+    "description": "This is an inverter welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Lightweight and portable",
+      "High efficiency and energy saving",
+      "Provides stable arc performance",
+      "Suitable for various welding processes",
+      "Allows precise control over welding parameters",
+      "Reduced power consumption"
+    ]
+  },
+  {
+    "filename": "arc.png",
+    "name": "Inverter Welder",
+    "description": "This is an inverter welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "a.png",
+    "name": "Thunder Inverter Welder",
+    "description": "This is an arc welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "v.png",
+    "name": "BX6 Silver Spartan Arc Welder",
+    "description": "This is an A/C arc welding machine",
+    "category": "Arc Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "r.png",
+    "name": "TMD 250 Arc Welder",
+    "description": "This is an arc welding machine",
+    "category": "Arc Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "q.png",
+    "name": "Ushindi Inverter Welder",
+    "description": "This is an arc welding machine",
+    "category": "Arc Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "f.png",
+    "name": "TMD 250 Arc Welder",
+    "description": "This is an A/C arc welding machine",
+    "category": "Arc Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "g.png",
+    "name": "Hugong Arc Welder",
+    "description": "This is an A/C arc welding machine",
+    "category": "Arc Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "e.png",
+    "name": "Hugong Arc Welder 250A",
+    "description": "This is a D/C arc welding machine",
+    "category": "Arc Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "d.png",
+    "name": "Ushindi ZX7-250 Inverter Welder",
+    "description": "This is a D/C arc welding machine",
+    "category": "Arc Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "b.png",
+    "name": "MMA 350 Inverter Welder",
+    "description": "This is an arc welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "h.png",
+    "name": "MMA 250 Inverter Welder",
+    "description": "This is an arc welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "i.png",
+    "name": "Ushindi ZX7 250 Welder",
+    "description": "This is an arc welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "j.png",
+    "name": "Prescott MMA 250 Inverter Welder",
+    "description": "This is an arc welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "k.png",
+    "name": "IMD 250 Inverter Welder",
+    "description": "This is an arc welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "l.png",
+    "name": "Tamashi 200A Inverter Welder",
+    "description": "This is an arc welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "m.png",
+    "name": "Esab 200A Inverter Welder",
+    "description": "Esab welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "n.png",
+    "name": "D&H Suprainverter 200A",
+    "description": "This is an inverter welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Versatile for various welding applications",
+      "Uses consumable electrodes",
+      "Suitable for thick materials",
+      "High welding speed",
+      "Durable and robust construction",
+      "Can operate in outdoor and windy conditions"
+    ]
+  },
+  {
+    "filename": "weldoven.png",
+    "name": "Supra Portable Oven",
+    "description": "Heavy duty drying oven for welding electrode",
+    "category": "Welding Oven",
+    "details": [
+      "Flawless Welds: Totally dry welding consumables, yield radiographic quality welds.",
+      "User friendly",
+      "Temperature control: Provided with thermostat control for precise setting of drying temperature, required for various type of electrodes.",
+      "Uniform heating of charged materials",
+      "Heavy duty thermostat for accurate temperature controls throughout range"
+    ]
+  },
+  {
+    "filename": "multiwelder.png",
+    "name": "Multi- Welder Machine",
+    "description": "Multi- welder welding machine",
+    "category": "Multi-welders",
+    "details": [
+      "Combines multiple welding processes in one machine (MIG, TIG, Arc)",
+      "Cost-effective for diverse applications",
+      "Easy switching between welding modes",
+      "High performance across various materials"
+    ]
+  },
+  {
+    "filename": "plasmac.png",
+    "name": "Plasma Cutter Machine",
+    "description": "Plasma CUT-120 welding machine",
+    "category": "Plasma Cutters",
+    "details": [
+      "Cuts through electrically conductive materials",
+      "Produces clean and precise cuts",
+      "Minimal heat distortion",
+      "High cutting speed"
+    ]
+  }
+]

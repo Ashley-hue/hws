@@ -1,0 +1,231 @@
+[
+  {
+    "filename": "6010.png",
+    "name": "6010 rods",
+    "description": "6010 welding rods",
+    "category": "6010",
+    "details": [
+      "High cellulose sodium coating",
+      "Deep penetration",
+      "Fast freezing slag",
+      "Suitable for vertical and overhead welding"
+    ]
+  },
+  {
+    "filename": "cast.png",
+    "name": "Cast Iron",
+    "description": "Cast Iron Non-Machinable",
+    "category": "Cast Iron",
+    "details": [
+      "High hardness and wear resistance",
+      "Suitable for non-machinable repairs",
+      "Good for heavy-duty applications",
+      "Limited post-weld machining options",
+      "Strong, durable welds"
+    ]
+  },
+  {
+    "filename": "e6010.png",
+    "name": "6010",
+    "description": "6010 Welding rods",
+    "category": "6010",
+    "details": [
+      "High cellulose sodium coating",
+      "Deep penetration",
+      "Fast freezing slag",
+      "Suitable for vertical and overhead welding"
+    ]
+  },
+  {
+    "filename": "lh.png",
+    "name": "Low Hydrogen",
+    "description": "Low Hydrogen Welding Rods",
+    "category": "E7018",
+    "details": [
+      "Low moisture absorption",
+      "Easy slag removal",
+      "Suitable for high-stress applications",
+      "Good ductility"
+    ]
+  },
+  {
+    "filename": "ms.png",
+    "name": "Mild Steel",
+    "description": "Mild Steel Welding Rods",
+    "category": "E6013",
+    "details": ["High strength", "Excellent arc stability", "Good weld quality"]
+  },
+  {
+    "filename": "welro.png",
+    "name": "Aluminium Welding Rods",
+    "description": "Aluminium Welding Rods",
+    "category": "Aluminium",
+    "details": [
+      "High Purity",
+      "Good corrosion resistance",
+      "Smooth welds",
+      "Excellent conductivity"
+    ]
+  },
+  {
+    "filename": "whrod.png",
+    "name": "Aluminium Steel",
+    "description": "Aluminium Welding Rods",
+    "category": "Aluminium",
+    "details": [
+      "High Purity",
+      "Good corrosion resistance",
+      "Smooth welds",
+      "Excellent conductivity"
+    ]
+  },
+  {
+    "filename": "wrod.png",
+    "name": "Aluminium Steel",
+    "description": "Aluminium Welding Rods",
+    "category": "Aluminium",
+    "details": [
+      "High Purity",
+      "Good corrosion resistance",
+      "Smooth welds",
+      "Excellent conductivity"
+    ]
+  },
+  {
+    "filename": "migg.png",
+    "name": "Mig Wire China",
+    "description": "1.6mm Mig Wire",
+    "category": "Migwire",
+    "details": [
+      "Consistent wire feed",
+      "Consistent performance",
+      "Good weld quality",
+      "Widely available",
+      "Cost-effective"
+    ]
+  },
+  {
+    "filename": "migweldingmig.png",
+    "name": "D&H Mig Wire",
+    "description": "0.8mm Mig Wire",
+    "category": "Migwire",
+    "details": [
+      "Consistent wire feed",
+      "Consistent performance",
+      "Good weld quality"
+    ]
+  },
+  {
+    "filename": "goldenbridge.png",
+    "name": "Golden Bridge",
+    "description": "Mild Steel 1.2mm",
+    "category": "E6013",
+    "details": [
+      "Stable arc",
+      "High efficiency",
+      "Minimal spatter",
+      "Good mechanical properties"
+    ]
+  },
+  {
+    "filename": "maruthi.png",
+    "name": "Mild Steel Maruthi",
+    "description": "Mild Steel 3.2mm",
+    "category": "E6013",
+    "details": [
+      "Good weld quality",
+      "Easy to use",
+      "Consistent performance",
+      "Suitable for general-purpose welding"
+    ]
+  },
+  {
+    "filename": "dnhh.png",
+    "name": "D&H Mild Steel",
+    "description": "Mild steel 3.2mm",
+    "category": "E6013",
+    "details": [
+      "High strength",
+      "Excellent arc stability",
+      "Smooth weld bead",
+      "Indian brand"
+    ]
+  },
+  {
+    "filename": "fillerrs.png",
+    "name": "D&H Filler Rods",
+    "description": "Filler Rods 2.4mm",
+    "category": "Flyer",
+    "details": [
+      "High-quality material",
+      "Smooth feeding",
+      "Good weld appearance",
+      "Suitable for various applications"
+    ]
+  },
+  {
+    "filename": "castirron.png",
+    "name": "D&H Cast Iron",
+    "description": "Cast Iron Machinable 2.4mm",
+    "category": "Cast Iron",
+    "details": [
+      "High nickel content",
+      "Excellent machinability",
+      "High strength",
+      "Indian brand"
+    ]
+  },
+  {
+    "filename": "roodss.png",
+    "name": "D&H Low Hydrogen",
+    "description": "7018 3.2mm",
+    "category": "E7018",
+    "details": ["Prevents cracking", "Smooth arc", "Indian brand"]
+  },
+  {
+    "filename": "filler.png",
+    "name": "Filler Rods",
+    "description": "Filler Rods 2.4mm",
+    "category": "Flyer",
+    "details": [
+      "High-quality material",
+      "Smooth feeding",
+      "Good weld appearance",
+      "Consistent performance"
+    ]
+  },
+  {
+    "filename": "fluxcore.png",
+    "name": "Flux Core Mig Wire",
+    "description": "0.8mm Mig Wire",
+    "category": "Migwire",
+    "details": [
+      "Produces a strong, durable weld",
+      "Easy to use, suitable for various positions",
+      "Good weld quality",
+      "Ideal for heavy-duty and structural applications",
+      "Effective on dirty, rusty, or painted surfaces"
+    ]
+  },
+  {
+    "filename": "aagi.jpeg",
+    "name": "AGI Mild Steel",
+    "description": "Mild steel 3.2mm",
+    "category": "E6013",
+    "details": ["High strength", "Excellent arc stability", "Smooth weld bead"]
+  },
+  {
+    "filename": "agi.png",
+    "name": "AGI Mild Steel",
+    "description": "Mild steel 3.2mm",
+    "category": "E6013",
+    "details": ["High strength", "Excellent arc stability", "Smooth weld bead"]
+  },
+  {
+    "filename": "alum.png",
+    "name": "D&H Aluminium Welding Rods",
+    "description": "Aluminium",
+    "category": "Aluminium",
+    "details": ["High Purity", "Good corrosion resistance","Smooth welds", "Excellent conductivity"]
+  }
+]

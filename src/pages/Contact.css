@@ -1,0 +1,289 @@
+.contactContainer {
+  position: relative;
+  width: auto;
+  height: 400px;
+  overflow: hidden;
+}
+
+.contactbg {
+  width: 100%;
+}
+
+.contact-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(49, 54, 40, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.contact-content {
+  color: white;
+}
+
+.contact-content p {
+  color: #ff9f1c;
+  display: inline;
+}
+
+.container {
+  display: flex;
+}
+
+.text-container {
+  flex-direction: column;
+  width: 50%;
+  padding: 10px;
+  justify-content: center;
+}
+
+.text-container span {
+  color: #ff9f1c;
+}
+
+.text-container h1 {
+  text-align: center;
+  color: #313628;
+}
+
+.text-container p {
+  text-align: center;
+  display: block;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-infos {
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.contact-item {
+  display: flex;
+  margin-left: 65px;
+  padding-bottom: 20px;
+}
+
+.contact-item img {
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+}
+
+.contact-items {
+  display: flex;
+  margin-left: 0px;
+}
+
+.contact-items img {
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+}
+
+.contact-details {
+  padding-left: 10px;
+  color: #313628;
+}
+
+.contact-detail {
+  padding-left: 10px;
+  margin-bottom: -10px;
+  color: #313628;
+}
+
+.contact-detail p {
+  font-size: 12px;
+}
+
+.message-container {
+  width: 50%;
+  margin-top: 150px;
+  margin-left: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  width: 100%;
+}
+
+.input-field {
+  flex: 1;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-small,
+.phone-area {
+  border: 2px solid #313628;
+  border-radius: 10px;
+  padding: 10px;
+  width: 70%;
+  outline: none;
+}
+
+.input-large {
+  border: 2px solid #313628;
+  border-radius: 10px;
+  padding: 10px;
+  width: 85%;
+  outline: none;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  top: -18px;
+  left: 10px;
+}
+
+.submit-button {
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background-color: #ff9f1c;
+  width: 20vh;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #e08300;
+}
+
+.map-container {
+  display: flex;
+  height: 80vh;
+}
+
+.office-info {
+  width: 50%;
+  height: 80vh;
+  margin-left: 20px;
+}
+
+.office-info h1 {
+  color: #313628;
+  margin-left: 80px;
+}
+
+.cards {
+  display: flex;
+  margin-left: 50px;
+}
+
+.area-card {
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #313628;
+  color: white;
+  margin: 10px;
+  flex: 1;
+}
+
+.addressplace {
+  display: flex;
+}
+
+.card-content {
+  margin-bottom: -5px;
+  margin-top: -20px;
+}
+
+.addressplace img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  padding-top: 10px;
+}
+
+.map-area {
+  width: 60%;
+  height: 80vh;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.footer-container {
+  display: block;
+  height: 40vh;
+  display: flex;
+  margin-top: 100px;
+  border-radius: 10px;
+  padding-top: 5px;
+  background-color: #313628;
+}
+
+.mapimage {
+  border-radius: 10px;
+  height: 90vh;
+  width: 70vh;
+  margin-left: 70px;
+}
+
+.footer-first {
+  width: 33%;
+  margin-left: 30px;
+  padding-top: 20px;
+}
+
+.footer-second {
+  width: 33%;
+  color: white;
+  margin-left: 150px;
+  padding-top: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footer-third {
+  width: 33%;
+  color: white;
+  padding-top: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footlogo {
+  height: 100px;
+  width: 100px;
+}
+
+.footer-content {
+  display: flex;
+  color: white;
+  margin-left: 10px;
+}
+
+.footer-description {
+  width: 400px;
+  margin-left: 20px;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.follow-us {
+  display: flex;
+}
+
+.follow-icon {
+  margin-left: 10px;
+  height: 30px;
+  width: 30px;
+}

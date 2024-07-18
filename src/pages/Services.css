@@ -1,0 +1,125 @@
+.services-container {
+  background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\downlo.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+.services-bg {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+.services-bg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(49, 54, 40, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.service-content {
+  color: white;
+  font-size: 40px; 
+  font-weight: bold; 
+}
+.services {
+  height: 430px;
+  background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\servicestuff.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+.top-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.detail-card {
+  background-color: #313628;
+  padding: 10px;
+  border-radius: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  height: 150px;
+  width: 150px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+.service-logo {
+  margin: 10px;
+  margin-left: 50px;
+  height: 60px;
+  width: 60px;
+}
+.callcentre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+}
+.appointment {
+  display: flex;
+  color: white;
+  height: 90px;
+  width: 150vh;
+  border-radius: 20px;
+  background-color: #FF9F1C; 
+  margin-top: -150px;
+}
+.phoneicon {
+  padding: 20px;
+  height: 50px;
+  width: 50px;
+}
+.text {
+  width: 30%;
+}
+.appointdeats {
+  width: 70%;
+  display: flex;
+  padding-right: 20px;
+}
+.appointbtn {
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  width: 300px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+.appointdeats p {
+  text-align: justify;
+}
+.process-area {
+  height: 540px;
+  justify-content: center;
+  align-items: center;
+}
+.process-area h3 {
+  color: #313628;
+  text-align: center;
+  font-size: 40px;
+}
+.process-area h3 span {
+  color: #FF9F1C;
+}
+.process-icon {
+  height: 400px;
+  width: 400px;
+  margin: 20px;
+}
+.process-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

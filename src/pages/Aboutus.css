@@ -1,0 +1,109 @@
+.intro-pic {
+    position: relative;
+    width: auto;
+    height: 400px;
+    overflow: hidden;
+}
+.intro-pic img {
+    width: 100%;
+    height: auto;
+}
+.aboutoverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(49, 54, 40, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.about-content {
+  color: white;
+  font-size: 40px; 
+  font-weight: bold; 
+}
+.about-content h3 span {
+    color: #FF9F1C;
+}
+.company-intro {
+    display: flex;  
+    justify-content: center;
+    height: 500px;
+    margin: 20px;
+}
+.company-text {
+    width: 40%;
+    margin-right: 50px;
+    align-items: center;
+}
+.company-text h2 {
+    margin-left: 80px;
+    color: #FF9F1C;
+}
+.ptag {
+    width: 70%;
+    text-align: justify;
+    color: #313628;
+    font-weight: 500;
+}
+.imagee {
+    width: 40%;
+}
+.imagee img {
+    height: 500px;
+    border-radius: 20px;
+}
+.mission-text {
+    width: 40%;
+    margin-left: 50px;
+    align-items: center;
+    color: #313628;
+    font-weight: 500;
+}
+.mission-text h2 {
+    margin-left: 190px;
+    color: #FF9F1C;
+}
+.partag {
+    text-align: justify;
+}
+.vision-image {
+    width: 40%;
+}
+.vision-image img {
+    width: 550px;
+    height: 450px;
+    border-radius: 20px;
+}
+.team {
+    color: #313628;
+}
+.team h1{
+   margin-left: 520px;
+   color: #FF9F1C;
+}
+.meet-team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.theteam {
+    width: 20%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+    transition: transform 0.3s;
+    margin-right: 30px;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+.theteam img {
+    height: 250px;
+    width: 250px;
+}
+
+
