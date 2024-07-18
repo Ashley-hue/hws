@@ -70,7 +70,7 @@
     }
 }
 .all-contain {
-    background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\abswhite.jpeg");
+    background-image: url("../components/Assets/abswhite.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -170,7 +170,7 @@
     margin-top: 250px;
     align-items: center;
     justify-content: center;
-    background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\homecount.jpeg");
+    background-image: url("../components/Assets/homecount.jpeg");
 
 }
 .number-item {

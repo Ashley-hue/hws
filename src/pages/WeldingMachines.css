@@ -1,7 +1,7 @@
 .slider-container {
   height: 400px;
   margin: auto;
-  background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\nwallp.jpeg");
+  background-image: url("../components/Assets/nwallp.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 20px;
