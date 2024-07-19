@@ -1,5 +1,5 @@
 .services-container {
-  /* background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\downlo.jpeg"); */
+  background-image: url("../components/Assets/downlo.jpeg");
   background-size: cover;
   background-repeat: no-repeat; 
 }
@@ -34,7 +34,7 @@
 }
 .services {
   height: 430px;
-  /* background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\servicestuff.jpeg"); */
+  background-image: url("../components/Assets/servicestuff.jpeg");
   background-size: cover;
   background-repeat: no-repeat; 
 }

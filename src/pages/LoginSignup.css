@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    /* background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\logbg.jpeg"); */
+    background-image: url("../components/Assets/logbg.jpeg");
     background-size: cover;
     background-position: center;
     filter: blur(10px);

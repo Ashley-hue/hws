@@ -1,6 +1,7 @@
 .all-contain {
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url("../components/Assets/abswhite.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .homeContainer {
@@ -97,6 +98,17 @@
 
 .card button:hover {
   background-color: #a8c374;
+}
+
+.number-widget {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 250px;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../components/Assets/homecount.jpeg");
 }
 
 .number-widget {

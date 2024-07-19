@@ -42,21 +42,21 @@ const WeldingRods = () => {
     { id: "Migwire", label: "Mig Wire" },
   ];
 
-  const brandCategories = [
-    { id: "AGI", label: "AGI" },
-    { id: "Maruthi", label: "Maruthi" },
-    { id: "D&H", label: "D&H" },
-    { id: "Senor", label: "Senor" },
-    { id: "Laser", label: "Laser" },
-  ];
+  // const brandCategories = [
+  //   { id: "AGI", label: "AGI" },
+  //   { id: "Maruthi", label: "Maruthi" },
+  //   { id: "D&H", label: "D&H" },
+  //   { id: "Senor", label: "Senor" },
+  //   { id: "Laser", label: "Laser" },
+  // ];
 
-  const sizeCategories = [
-    { id: "0.8", label: "0.8mm" },
-    { id: "1.6", label: "1.6mm" },
-    { id: "2.4", label: "2.4mm" },
-    { id: "3.2", label: "3.2mm" },
-    { id: "4.0", label: "4.0mm" },
-  ];
+  // const sizeCategories = [
+  //   { id: "0.8", label: "0.8mm" },
+  //   { id: "1.6", label: "1.6mm" },
+  //   { id: "2.4", label: "2.4mm" },
+  //   { id: "3.2", label: "3.2mm" },
+  //   { id: "4.0", label: "4.0mm" },
+  // ];
 
   const [collapsedSections, setCollapsedSections] = useState({
     rods: false,
@@ -188,54 +188,6 @@ const WeldingRods = () => {
             {!collapsedSections.rods && (
               <div className="categories">
                 {categories.map((category) => (
-                  <div key={category.id} className="category-items">
-                    <input
-                      type="checkbox"
-                      id={category.id}
-                      value={category.id}
-                      onChange={handleCheckboxChange}
-                    />
-                    <label htmlFor={category.id}>{category.label}</label>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="category-selections">
-            <h4 className="category-heading">
-              Brand
-              <span onClick={() => toggleCollapse("brand")}>
-                {collapsedSections.brand ? "▼" : "▲"}
-              </span>
-            </h4>
-            {!collapsedSections.brand && (
-              <div className="categories">
-                {brandCategories.map((category) => (
-                  <div key={category.id} className="category-items">
-                    <input
-                      type="checkbox"
-                      id={category.id}
-                      value={category.id}
-                      onChange={handleCheckboxChange}
-                    />
-                    <label htmlFor={category.id}>{category.label}</label>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="category-selections">
-            <h4 className="category-heading">
-              Size
-              <span onClick={() => toggleCollapse("size")}>
-                {collapsedSections.size ? "▼" : "▲"}
-              </span>
-            </h4>
-            {!collapsedSections.size && (
-              <div className="categories">
-                {sizeCategories.map((category) => (
                   <div key={category.id} className="category-items">
                     <input
                       type="checkbox"
