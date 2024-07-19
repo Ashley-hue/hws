@@ -1,7 +1,7 @@
 .description-items {
     height: 100%;
     display: flex;
-    background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\descbg.jpeg");
+    /* background-image: url("C:\Users\ashle\OneDrive\Documents\WeldingWebsite\hws\frontend\src\components\Assets\descbg.jpeg"); */
     background-size: cover;
     background-repeat: no-repeat;
 }
