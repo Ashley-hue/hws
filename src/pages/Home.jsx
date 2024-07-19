@@ -1,28 +1,28 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useMediaQuery } from 'react-responsive';
-import './Home.css'
-import bbg from '../components/Assets/weldbgg.jpg'
-import weldrod from '../components/Assets/weldingrod.jpg'
-import weldmachine from '../components/Assets/weldmachine.jpg'
-import weldacc from '../components/Assets/weldacc.jpg'
-import accessories from "../components/Assets/availweld.png"
-import happycust from "../components/Assets/happycust.png"
-import servedyears from "../components/Assets/yearserve.png"
-import CountUp from './CountUp'
-import migwelder from "../components/Assets/migmac.jpeg"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+import "./Home.css";
+import bbg from "../components/Assets/weldbgg.jpg";
+import weldrod from "../components/Assets/weldingrod.jpg";
+import weldmachine from "../components/Assets/weldmachine.jpg";
+import weldacc from "../components/Assets/weldacc.jpg";
+import accessories from "../components/Assets/availweld.png";
+import happycust from "../components/Assets/happycust.png";
+import servedyears from "../components/Assets/yearserve.png";
+import CountUp from "./CountUp";
+import migwelder from "../components/Assets/migmac.jpeg";
 import tigwelder from "../components/Assets/tigmac.jpeg";
 import multiwelder from "../components/Assets/multiwelder.jpeg";
-import mpesalogo from "../components/Assets/mpesalogo.jpg"
-import pb from "../components/Assets/primebanklogo.jpeg"
+import mpesalogo from "../components/Assets/mpesalogo.jpg";
+import pb from "../components/Assets/primebanklogo.jpeg";
 
 const Home = () => {
-  const isDesktoporLaptop = useMediaQuery({ minDeviceWidth: 1224});
-  const isTabletorMobile = useMediaQuery({ maxDeviceWidth: 1224});
+  const isDesktoporLaptop = useMediaQuery({ minDeviceWidth: 1224 });
+  const isTabletorMobile = useMediaQuery({ maxDeviceWidth: 1224 });
   const navigate = useNavigate();
 
   return (
-    <div className='all-contain'>
+    <div className="all-contain">
       <div className="homeContainer">
         {isDesktoporLaptop && <img src={bbg} className="weldbg" alt="w" />}
         <div className="overlay">
@@ -145,12 +145,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className='transport-area'>
+      <div className="transport-area">
         <h4>We Transport Goods Countrywide!</h4>
         <h2>Kindly contact 0726102499 for prices!</h2>
       </div>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;
