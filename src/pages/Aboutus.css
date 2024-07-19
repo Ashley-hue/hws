@@ -1,7 +1,7 @@
 .intro-pic {
     position: relative;
-    width: auto;
-    height: 400px;
+    width: 100%;
+    height: max-content;
     overflow: hidden;
 }
 .intro-pic img {
@@ -10,7 +10,7 @@
 }
 .aboutoverlay {
     position: absolute;
-    top: 0;
+    top: 0; 
     left: 0;
     right: 0;
     bottom: 0;
@@ -21,89 +21,112 @@
     pointer-events: none;
 }
 .about-content {
-  color: white;
-  font-size: 40px; 
-  font-weight: bold; 
+    color: white;
+    font-size: 40px;
+    font-weight: bold; 
+    text-align: center;
 }
 .about-content h3 span {
     color: #FF9F1C;
 }
 .company-intro {
     display: flex;  
+    flex-wrap: wrap;
     justify-content: center;
-    height: 500px;
+    height: auto;
     margin: 20px;
 }
-.company-text {
-    width: 40%;
-    margin-right: 50px;
-    align-items: center;
+.company-text, .mission-text {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
 }
-.company-text h2 {
-    margin-left: 80px;
+.company-text h2, .mission-text h2 {
     color: #FF9F1C;
+    margin-bottom: 20px;
 }
-.ptag {
-    width: 70%;
+.ptag, .partag {
+    width: 90%;
+    margin: 0 auto;
     text-align: justify;
     color: #313628;
     font-weight: 500;
 }
-.imagee {
-    width: 40%;
+.imagee, .vision-image {
+    width: 90%;
+    margin: 0 auto 20px;
+    text-align: center;
 }
-.imagee img {
-    height: 500px;
-    border-radius: 20px;
-}
-.mission-text {
-    width: 40%;
-    margin-left: 50px;
-    align-items: center;
-    color: #313628;
-    font-weight: 500;
-}
-.mission-text h2 {
-    margin-left: 190px;
-    color: #FF9F1C;
-}
-.partag {
-    text-align: justify;
-}
-.vision-image {
-    width: 40%;
-}
-.vision-image img {
-    width: 550px;
-    height: 450px;
+.imagee img, .vision-image img {
+    width: 100%;
+    height: auto;
     border-radius: 20px;
 }
 .team {
     color: #313628;
+    text-align: center;
 }
-.team h1{
-   margin-left: 520px;
-   color: #FF9F1C;
+.team h1 {
+    color: #FF9F1C;
+    margin-bottom: 30px;
 }
 .meet-team {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
 }
 .theteam {
-    width: 20%;
+    width: 90%;
+    max-width: 250px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
     transition: transform 0.3s;
-    margin-right: 30px;
-    margin-top: 10px;
-    padding-left: 20px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
 }
 .theteam img {
-    height: 250px;
-    width: 250px;
+    width: 100%;
+    height: auto;
 }
-
-
+@media (min-width: 768px) {
+    .intro-pic {
+        height: 300px;
+    }
+    .company-text, .mission-text {
+        width: 40%;
+        margin-right: 50px;
+        text-align: left;
+    }
+    .imagee, .vision-image {
+        width: 40%;
+        margin: 0;
+    }
+    .company-intro {
+        height: 500px;
+        margin: 20px;
+    }
+    .theteam {
+        width: 20%;
+        margin: 30px;
+    }
+}
+@media (min-width: 1024px) {
+    .company-intro {
+        height: 500px;
+        margin: 20px;
+    }
+    .company-text, .mission-text {
+        width: 40%;
+        margin-right: 50px;
+    }
+    .imagee, .vision-image {
+        width: 40%;
+    }
+    .theteam {
+        width: 20%;
+    }
+}

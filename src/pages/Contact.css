@@ -1,12 +1,14 @@
 .contactContainer {
   position: relative;
-  width: auto;
-  height: 400px;
+  width: 100%;
+  height: 50vh;
   overflow: hidden;
 }
 
 .contactbg {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .contact-overlay {
@@ -24,6 +26,11 @@
 
 .contact-content {
   color: white;
+  text-align: center;
+}
+
+.contact-content h1 {
+  font-size: 2.5rem;
 }
 
 .contact-content p {
@@ -33,13 +40,13 @@
 
 .container {
   display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
 }
 
 .text-container {
-  flex-direction: column;
-  width: 50%;
-  padding: 10px;
-  justify-content: center;
+  flex: 1 1 300px;
+  padding: 1rem;
 }
 
 .text-container span {
@@ -49,115 +56,82 @@
 .text-container h1 {
   text-align: center;
   color: #313628;
+  font-size: 2rem;
 }
 
-.text-container p {
+.text-container > p {
   text-align: center;
-  display: block;
 }
 
-.contact-info {
+.contact-info, .contact-infos {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
 }
 
-.contact-infos {
+.contact-item, .contact-items {
   display: flex;
-  justify-content: center;
-  margin-right: 20px;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.contact-item {
-  display: flex;
-  margin-left: 65px;
-  padding-bottom: 20px;
+.contact-item img, .contact-items img {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
 }
 
-.contact-item img {
-  width: 60px;
-  height: 60px;
-  margin-top: 20px;
-}
-
-.contact-items {
-  display: flex;
-  margin-left: 0px;
-}
-
-.contact-items img {
-  width: 60px;
-  height: 60px;
-  margin-top: 20px;
-}
-
-.contact-details {
-  padding-left: 10px;
-  color: #313628;
-}
-
-.contact-detail {
-  padding-left: 10px;
-  margin-bottom: -10px;
+.contact-details, .contact-detail {
   color: #313628;
 }
 
 .contact-detail p {
-  font-size: 12px;
+  font-size: 0.9rem;
 }
 
 .message-container {
-  width: 50%;
-  margin-top: 150px;
-  margin-left: 170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1 1 300px;
+  padding: 1rem;
 }
 
 .input-group {
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .input-field {
-  flex: 1;
+  flex: 1 1 200px;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .input-small,
-.phone-area {
-  border: 2px solid #313628;
-  border-radius: 10px;
-  padding: 10px;
-  width: 70%;
-  outline: none;
-}
-
+.phone-area,
 .input-large {
   border: 2px solid #313628;
   border-radius: 10px;
   padding: 10px;
-  width: 85%;
+  width: 100%;
   outline: none;
 }
 
 .error {
   color: red;
-  font-size: 12px;
+  font-size: 0.8rem;
   position: absolute;
-  top: -18px;
-  left: 10px;
+  top: -1.2rem;
+  left: 0;
 }
 
 .submit-button {
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   margin-top: 10px;
   outline: none;
   border: none;
   background-color: #ff9f1c;
-  width: 20vh;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -169,121 +143,126 @@
 
 .map-container {
   display: flex;
-  height: 80vh;
+  flex-wrap: wrap;
+  padding: 2rem;
 }
 
 .office-info {
-  width: 50%;
-  height: 80vh;
-  margin-left: 20px;
+  flex: 1 1 300px;
+  padding: 1rem;
 }
 
 .office-info h1 {
   color: #313628;
-  margin-left: 80px;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .cards {
   display: flex;
-  margin-left: 50px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .area-card {
-  flex-direction: column;
-  align-items: flex-start;
+  flex: 1 1 250px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 1rem;
   background-color: #313628;
   color: white;
-  margin: 10px;
-  flex: 1;
 }
 
 .addressplace {
   display: flex;
-}
-
-.card-content {
-  margin-bottom: -5px;
-  margin-top: -20px;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .addressplace img {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   margin-right: 10px;
-  padding-top: 10px;
 }
 
 .map-area {
-  width: 60%;
-  height: 80vh;
-  margin-top: 30px;
-  margin-left: 50px;
-}
-
-.footer-container {
-  display: block;
-  height: 40vh;
-  display: flex;
-  margin-top: 100px;
-  border-radius: 10px;
-  padding-top: 5px;
-  background-color: #313628;
+  flex: 1 1 300px;
+  padding: 1rem;
 }
 
 .mapimage {
   border-radius: 10px;
-  height: 90vh;
-  width: 70vh;
-  margin-left: 70px;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: cover;
 }
 
-.footer-first {
-  width: 33%;
-  margin-left: 30px;
-  padding-top: 20px;
-}
-
-.footer-second {
-  width: 33%;
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background-color: #313628;
   color: white;
-  margin-left: 150px;
-  padding-top: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.footer-first,
+.footer-second,
 .footer-third {
-  width: 33%;
-  color: white;
-  padding-top: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  flex: 1 1 250px;
+  padding: 1rem;
 }
 
 .footlogo {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
 }
 
 .footer-content {
   display: flex;
-  color: white;
-  margin-left: 10px;
-}
-
-.footer-description {
-  width: 400px;
-  margin-left: 20px;
-  color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  align-items: center;
 }
 
 .follow-us {
   display: flex;
+  gap: 10px;
 }
 
 .follow-icon {
-  margin-left: 10px;
   height: 30px;
   width: 30px;
+}
+
+@media (max-width: 768px) {
+  .contact-content h1 {
+    font-size: 2rem;
+  }
+
+  .text-container h1,
+  .office-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .footer-container {
+    text-align: center;
+  }
+
+  .footer-content {
+    justify-content: center;
+  }
+
+  .follow-us {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .text-container h1,
+  .office-info h1 {
+    font-size: 1.2rem;
+  }
 }

@@ -248,7 +248,7 @@
 @media (max-width: 1224px) {
   .overlay-content {
     width: 100%;
-    text-align: center;
+    text-align: justify;
     align-items: center;
   }
   .card-container {
@@ -296,16 +296,19 @@
   .homeContainer {
     display: flex;
     flex-direction: column;
-    height: auto;
+    height: 400px;
+  }
+  .homeContainer img {
+    height: 400px;
   }
   .overlay-content {
     position: relative;
     width: 100%;
-    height: fit-content;
+    height: 200px;
     padding-top: 80px;
     z-index: 0;
   }
   .card-container {
-    margin-top: 600px;
+    margin-top: 50px;
   }
 }

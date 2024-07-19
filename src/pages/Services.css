@@ -1,125 +1,197 @@
 .services-container {
   background-image: url("../components/Assets/downlo.jpeg");
   background-size: cover;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .services-bg {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
 }
+
 .services-bg img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
+
 .service-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(49, 54, 40, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-}
-.service-content {
-  color: white;
-  font-size: 40px; 
-  font-weight: bold; 
-}
-.services {
-  height: 430px;
-  background-image: url("../components/Assets/servicestuff.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat; 
-}
-.top-cards {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(49, 54, 40, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
+
+.service-content {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.services {
+  min-height: 430px;
+  padding: 2rem 0;
+  background-image: url("../components/Assets/servicestuff.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.top-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
 .detail-card {
   background-color: #313628;
-  padding: 10px;
+  padding: 1rem;
   border-radius: 20px;
-  margin-right: 20px;
-  margin-top: 20px;
-  height: 150px;
-  width: 150px;
   color: white;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: calc(15.333% - 1rem);
+  min-width: 150px;
+  aspect-ratio: 1 / 1;
 }
+
 .service-logo {
-  margin: 10px;
-  margin-left: 50px;
-  height: 60px;
-  width: 60px;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 0.5rem;
 }
+
 .callcentre {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30vh;
+  padding: 2rem 1rem;
 }
+
 .appointment {
   display: flex;
+  flex-wrap: wrap;
   color: white;
-  height: 90px;
-  width: 150vh;
   border-radius: 20px;
-  background-color: #FF9F1C; 
-  margin-top: -150px;
+  background-color: #FF9F1C;
+  padding: 1rem;
+  max-width: 1000px;
+  width: 100%;
 }
+
 .phoneicon {
-  padding: 20px;
   height: 50px;
   width: 50px;
+  margin-right: 1rem;
 }
+
 .text {
-  width: 30%;
+  flex: 1;
+  min-width: 150px;
 }
+
 .appointdeats {
-  width: 70%;
+  flex: 2;
   display: flex;
-  padding-right: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
+
 .appointbtn {
   height: 40px;
   border-radius: 20px;
   border: none;
-  width: 300px;
-  margin-top: 30px;
-  margin-left: 10px;
+  padding: 0 1.5rem;
+  white-space: nowrap;
 }
-.appointdeats p {
-  text-align: justify;
-}
+
 .process-area {
-  height: 540px;
-  justify-content: center;
-  align-items: center;
+  padding: 2rem 1rem;
 }
+
 .process-area h3 {
   color: #313628;
   text-align: center;
-  font-size: 40px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
+
 .process-area h3 span {
   color: #FF9F1C;
 }
-.process-icon {
-  height: 400px;
-  width: 400px;
-  margin: 20px;
-}
+
 .process-icon-container {
   display: flex;
-  align-items: center;
+  /* flex-wrap: wrap; */
   justify-content: center;
+  gap: 2rem;
+}
+
+.process-icon {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .service-content {
+    font-size: 2rem;
+  }
+
+  .detail-card {
+    width: calc(50% - 1rem);
+  }
+
+  .appointment {
+    flex-direction: column;
+  }
+
+  .text, .appointdeats {
+    width: 100%;
+    text-align: center;
+  }
+
+  .appointdeats {
+    justify-content: center;
+  }
+
+  .process-icon {
+    width: 100%;
+    max-width: 300px;
+  }
+  .process-icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+}
+
+@media (max-width: 480px) {
+  .service-content {
+    font-size: 1.5rem;
+  }
+
+  .detail-card {
+    width: 100%;
+  }
+
+  .process-area h3 {
+    font-size: 1.5rem;
+  }
 }
