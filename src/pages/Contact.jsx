@@ -86,39 +86,40 @@ const Contact = () => {
             Get in <span>Touch</span>
           </h1>
           <p>Got questions? Let's chat!</p>
-
-          <div className="contact-info">
-            <div className="contact-item">
-              <img src={phoneicon} alt="phone" className="icon" />
-              <div className="contact-details">
-                <h3>Phone Number</h3>
-                <p>0726102499</p>
+          <div className="contactdeats">
+            <div className="contact-info">
+              <div className="contact-item">
+                <img src={phoneicon} alt="phone" className="icon" />
+                <div className="contact-details">
+                  <h3>Phone Number</h3>
+                  <p>0726102499</p>
+                </div>
+              </div>
+              <div className="contact-item">
+                <img src={emailicon} alt="email" className="icon" />
+                <div className="contact-details">
+                  <h3>Email</h3>
+                  <p>Dynaweld52@gmail.com</p>
+                </div>
               </div>
             </div>
-            <div className="contact-item">
-              <img src={emailicon} alt="email" className="icon" />
-              <div className="contact-details">
-                <h3>Email</h3>
-                <p>Dynaweld52@gmail.com</p>
+            <div className="contact-infos">
+              <div className="contact-items">
+                <img src={webicon} alt="phone" className="icon" />
+                <div className="contact-detail">
+                  <h3>Socials</h3>
+                  <p>www.hardware&welding.com</p>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="contact-infos">
-            <div className="contact-items">
-              <img src={webicon} alt="phone" className="icon" />
-              <div className="contact-detail">
-                <h3>Socials</h3>
-                <p>www.hardware&welding.com</p>
-              </div>
-            </div>
-            <div className="contact-items">
-              <img src={addressicon} alt="email" className="icon" />
-              <div className="contact-detail">
-                <h3>Address</h3>
-                <p>
-                  Industrial area, <br />
-                  Dar es Salaam Rd
-                </p>
+              <div className="contact-items">
+                <img src={addressicon} alt="email" className="icon" />
+                <div className="contact-detail">
+                  <h3>Address</h3>
+                  <p>
+                    Industrial area, <br />
+                    Dar es Salaam Rd
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -181,8 +182,12 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className="submit-button" disabled={isLoading}>
-              {isLoading ? 'Sending...' : 'Send Message'}
+            <button
+              type="submit"
+              className="submit-button"
+              disabled={isLoading}
+            >
+              {isLoading ? "Sending..." : "Send Message"}
             </button>
             {successMessage && <p className="success">{successMessage}</p>}
           </form>

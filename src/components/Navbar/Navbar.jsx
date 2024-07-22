@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "./Navbar.css";
-import { Link, useLocation } from "react-router-dom";
-import acc from "../Assets/acc.png"
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import acc from "../Assets/acc.png";
 import logo from "../Assets/weldinglog.png";
+import "./Navbar.css";
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [menu, setMenu] = useState("");
   const [dropdownVisible, setDropdownVisible] = useState(false);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const path = location.pathname;
@@ -23,13 +24,20 @@ const Navbar = () => {
     }
   }, [location]);
 
-  const handleMouseEnter = () => {
-    setDropdownVisible(true);
-  };
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
+  }
 
-  const handleMouseLeave = () => {
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    alert('Logged out successfully');
     setDropdownVisible(false);
   };
+
+  const handleLogin = () => {
+    navigate('/login-signup');
+    setDropdownVisible(false);
+  }
 
   return (
     <div className="navbar">
@@ -40,64 +48,40 @@ const Navbar = () => {
 
       <ul className="nav-menu">
         <li>
-          <Link
-            to="/"
-            onClick={() => {
-              setMenu("Home");
-            }}
-          >
-            Home{menu === "Home" ? <hr /> : <></>}
+          <Link to="/" onClick={() => setMenu("Home")}>
+            Home{menu === "Home" ? <hr /> : null}
           </Link>
         </li>
         <li>
-          <Link
-            to="/about"
-            onClick={() => {
-              setMenu("About");
-            }}
-          >
-            {" "}
-            About Us{menu === "About" ? <hr /> : <></>}
+          <Link to="/about" onClick={() => setMenu("About")}>
+            About Us{menu === "About" ? <hr /> : null}
           </Link>
         </li>
         <li>
-          <Link
-            to="/services"
-            onClick={() => {
-              setMenu("Services");
-            }}
-          >
-            Services{menu === "Services" ? <hr /> : <></>}
+          <Link to="/services" onClick={() => setMenu("Services")}>
+            Services{menu === "Services" ? <hr /> : null}
           </Link>
         </li>
         <li>
-          <Link
-            to="/contact"
-            onClick={() => {
-              setMenu("Contact");
-            }}
-          >
-            Contact Us{menu === "Contact" ? <hr /> : <></>}
+          <Link to="/contact" onClick={() => setMenu("Contact")}>
+            Contact Us{menu === "Contact" ? <hr /> : null}
           </Link>
         </li>
       </ul>
       <div
-        className="nav-account"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <img src={acc} alt="" />
+        className="nav-account">
+        <img src={acc} alt="" onClick={toggleDropdown}/>
         {dropdownVisible && (
           <ul className="dropdown-menu">
-            <li>
-              <Link to="/dashboard"><b>Dashboard</b></Link>
-            </li>
-            <li>
-              <Link to="/settings"><b>Settings</b></Link>
-            </li>
-            <li>
-              <Link to="/logout"><b>Logout</b></Link>
-            </li>
+            {isLoggedIn ? (
+              <li onClick={handleLogout}>
+                <b>Logout</b>
+              </li>
+            ) : (
+              <li onClick={handleLogin}>
+               <b>Login</b>
+              </li>
+            )}
           </ul>
         )}
       </div>

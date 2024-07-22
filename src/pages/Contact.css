@@ -62,9 +62,11 @@
 .text-container > p {
   text-align: center;
 }
-
-.contact-info, .contact-infos {
+.contactdeats {
   display: flex;
+}
+.contact-info, .contact-infos {
+  width: 50%;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
@@ -92,7 +94,7 @@
 
 .message-container {
   flex: 1 1 300px;
-  padding: 1rem;
+  padding: 5rem;
 }
 
 .input-group {
@@ -102,6 +104,7 @@
 }
 
 .input-field {
+  margin: 0.5rem;
   flex: 1 1 200px;
   position: relative;
   margin-bottom: 1.5rem;
@@ -191,6 +194,7 @@
 }
 
 .mapimage {
+  margin-top: 7rem;
   border-radius: 10px;
   width: 100%;
   height: auto;
@@ -237,20 +241,30 @@
   .contact-content h1 {
     font-size: 2rem;
   }
-
+  .contactdeats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .map-area {
+    display: none;
+  }
   .text-container h1,
   .office-info h1 {
     font-size: 1.5rem;
   }
-
   .footer-container {
     text-align: center;
   }
 
   .footer-content {
     justify-content: center;
+    text-align: justify;
   }
-
+  .footer-first, .footer-second {
+    text-align: justify;
+  }
+  
   .follow-us {
     justify-content: center;
   }
@@ -260,7 +274,10 @@
   .contact-content h1 {
     font-size: 1.5rem;
   }
-
+  .contactdeats {
+    display: flex;
+    flex-direction: column;
+  }
   .text-container h1,
   .office-info h1 {
     font-size: 1.2rem;
