@@ -196,17 +196,20 @@ const WeldingMachines = () => {
             {filteredProducts.length > 0 ? (
               filteredProducts.map((image) => (
                 <div key={image.filename} className="product-card">
-                  <div className="image-container">
+                  <div className="text-container">
+                    <h4>{image.name}</h4>
+                    <p>{image.description}</p>
                     <img
                       src={`http://localhost:5000${image.url}`}
                       alt={image.filename}
                     />
-                  </div>
-                  <div className="text-container">
-                    <h4>{image.name}</h4>
-                    <p>{image.description}</p>
-                    <button className="details-button" onClick={ () => handleImageClick(image)}>View Details</button>
-                    <button className='request-button'> Request Quote</button>
+                    <button
+                      className="details-button"
+                      onClick={() => handleImageClick(image)}
+                    >
+                      View Details
+                    </button>
+                    <button className="request-button"> Request Quote</button>
                   </div>
                 </div>
               ))

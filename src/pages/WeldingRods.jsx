@@ -216,17 +216,20 @@ const WeldingRods = () => {
             {filteredProducts.length > 0 ? (
               filteredProducts.map((rod) => (
                 <div key={rod.filename} className="product-card">
-                  <div className="image-container">
+                  <div className="text-container">
+                    <h4>{rod.name}</h4>
+                    <p>{rod.description}</p>
                     <img
                       src={`http://localhost:5000${rod.url}`}
                       alt={rod.filename}
                     />
-                  </div>
-                  <div className="text-container">
-                    <h4>{rod.name}</h4>
-                    <p>{rod.description}</p>
-                    <button className="details-button" onClick={ () => handleImageClick(rod)}>View Details</button>
-                    <button className='request-button'> Request Quote</button>
+                    <button
+                      className="details-button"
+                      onClick={() => handleImageClick(rod)}
+                    >
+                      View Details
+                    </button>
+                    <button className="request-button"> Request Quote</button>
                   </div>
                 </div>
               ))

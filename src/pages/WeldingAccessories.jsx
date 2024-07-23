@@ -287,7 +287,7 @@ const WeldingAccessories = () => {
                     <input
                       type="checkbox"
                       id={category.id}
-                      value={category.id}
+                      value={category.id} 
                       onChange={handleCheckboxChange}
                     />
                     <label htmlFor={category.id}>{category.label}</label>
@@ -335,16 +335,20 @@ const WeldingAccessories = () => {
             {filteredProducts.length > 0 ? (
               filteredProducts.map((accessory) => (
                 <div key={accessory.filename} className="product-card">
-                  <div className="image-container">
+                  <div className="text-container">
+                    <h4>{accessory.name}</h4>
+                    <p>{accessory.description}</p>
                     <img
                       src={`http://localhost:5000${accessory.url}`}
                       alt={accessory.filename}
                     />
-                  </div>
-                  <div className="text-container">
-                    <h4>{accessory.name}</h4>
-                    <p>{accessory.description}</p>
-                    <button className="details-button" onClick={() => handleImageClick(accessory)}> View Details </button>
+                    <button
+                      className="details-button"
+                      onClick={() => handleImageClick(accessory)}
+                    >
+                      {" "}
+                      View Details{" "}
+                    </button>
                     <button className="request-button"> Request Quote</button>
                   </div>
                 </div>

@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   padding: 20px;
   border-radius: 10px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .slider-slide {
@@ -14,6 +14,7 @@
   color: #fff;
   height: auto;
   padding: 20px;
+  overflow: hidden;
 }
 
 .slider-slide h2 {
@@ -34,6 +35,7 @@
   justify-content: space-between;
   height: 100%;
   gap: 20px;
+  overflow: hidden;
 }
 
 .text-content {
@@ -43,14 +45,18 @@
   justify-content: center;
   flex: 1;
   text-align: justify;
+  overflow: hidden;
 }
 
-.text-content h2 {
+.text-content h2 { 
   font-family: "Lobster";
 }
 
 .text-content p {
   font-size: clamp(0.8rem, 2vw, 1rem);
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
 }
 
 .slick-dots {
@@ -122,8 +128,9 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  width: 100%;
 }
 
 .product-card {
@@ -138,29 +145,21 @@
   padding-bottom: 60px;
   text-align: center;
   align-items: center;
-  height: 400px;
-}
-
-.image-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.image-container img {
-  max-width: 100%;
   height: auto;
-  max-height: 250px;
-  object-fit: contain;
+  min-height: 400px;
+  width: 90%;
 }
 
 .text-container {
   flex-shrink: 0;
   width: 100%;
 }
-
+.text-container img {
+  max-width: 100%;
+  height: auto;
+  max-height: 15rem; 
+  object-fit: contain;
+}
 .product-card .details-button,
 .product-card .request-button {
   display: block;
@@ -168,6 +167,7 @@
   bottom: 10px;
   width: calc(50% - 10px);
   max-width: 150px;
+  margin: 0px 10px 0px 10px;
 }
 
 .product-card .details-button {
@@ -212,10 +212,6 @@
     flex-direction: row;
   }
 
-  .text-content {
-    padding-right: 20px;
-  }
-
   .product-content {
     flex-direction: row;
   }
@@ -239,5 +235,26 @@
   .product-card:hover .details-button,
   .product-card:hover .request-button {
     display: block;
+  }
+}
+@media (max-width: 767px) {
+   .slider-slide {
+    height: auto;
+    min-height: 400px;
+  }
+  .text-content {
+    padding-right: 20px;
+    text-align: center;
+  }
+  .text-content p {
+    text-align: justify;
+  }
+  .product-grid { 
+    grid-template-columns: 1fr;
+  }
+   .product-card .details-button,
+  .product-card .request-button {
+    display: block;
+    margin: 0px 10px 0px 10px;
   }
 }
