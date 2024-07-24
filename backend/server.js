@@ -1,8 +1,4 @@
 const express = require('express');
-const { Sequelize, DataTypes } = require('sequelize');
-const mysql = require('mysql2'); 
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
@@ -12,45 +8,14 @@ const exp = require('constants');
 require('dotenv').config(); 
 
 const app = express();
-// app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
-// const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
-//   host: process.env.DB_HOST,
-//   dialect: 'mysql'
-// });
 
 const imagesDir = path.join(__dirname, 'stocks');
 const imagesDataPath = path.join(__dirname, 'images.json');
 const rodsDataPath = path.join(__dirname, 'rods.json');
 const accDataPath = path.join(__dirname, 'accessory.json');
-
-// const User = sequelize.define('User', {
-//   firstName: {
-//     type: DataTypes.STRING, 
-//     allowNull: false
-//   },
-//   lastName: {
-//     type: DataTypes.STRING,
-//     allowNull: false
-//   },
-//   email: {
-//     type: DataTypes.STRING,
-//     allowNull: false,
-//     unique: true
-//   },
-//   phone: {
-//     type: DataTypes.STRING,
-//     allowNull: false
-//   }, 
-//   password: {
-//     type: DataTypes.STRING,
-//     allowNull: false
-//   }
-// });
-
-// sequelize.sync();
 
 app.get('/images', (req, res) => {
     fs.readFile(imagesDataPath, 'utf8', (err, data) => {
@@ -105,69 +70,6 @@ app.get("/accessories", (req, res) => {
     res.json(accessories);
   });
 });
-
-// app.post("/api/login", async (req, res) => {
-//   const { email, password } = req.body;
-//   try {
-//     const user = await User.findOne({ where: { email } });
-//     if (!user) {
-//       return res.status(400).json({ message: "User not found" });
-//     }
-//     const isMatch = await bcrypt.compare(password, user.password);
-//     if (!isMatch) {
-//       return res.status(400).json({ message: "Invalid credentials" });
-//     }
-//     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-//       expiresIn: "1h",
-//     });
-//     res.json({
-//       token,
-//       user: {
-//         id: user.id,
-//         email: user.email,
-//         firstName: user.firstName,
-//         lastName: user.lastName,
-//       },
-//     });
-//   } catch (error) {
-//     res.status(500).json({ message: "Server error" });
-//   }
-// });
-
-// // Signup route
-// app.post("/api/signup", async (req, res) => {
-//   const { firstName, lastName, email, phone, password } = req.body;
-//   try {
-//     const existingUser = await User.findOne({ where: { email } });
-//     if (existingUser) {
-//       return res.status(400).json({ message: "User already exists" });
-//     }
-//     const salt = await bcrypt.genSalt(10);
-//     const hashedPassword = await bcrypt.hash(password, salt);
-//     const user = await User.create({
-//       firstName,
-//       lastName,
-//       email,
-//       phone,
-//       password: hashedPassword,
-//     });
-//     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-//       expiresIn: "1h",
-//     });
-//     res.json({
-//       token,
-//       user: {
-//         id: user.id,
-//         email: user.email,
-//         firstName: user.firstName,
-//         lastName: user.lastName,
-//       },
-//     });
-//   } catch (error) {
-//     res.status(500).json({ message: "Server error" });
-//   }
-// });
-
 
 
 app.use('/images', express.static(imagesDir));
