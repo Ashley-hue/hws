@@ -81,7 +81,6 @@ const transporter = nodemailer.createTransport({
     pass: process.env.ADMIN_PASSWORD,
   },
 });
-
 app.post("/send", (req, res) => {
   const { fullName, phoneNumber, email, message } = req.body;
 

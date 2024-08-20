@@ -111,7 +111,7 @@
   cursor: pointer;
 }
 
-.image-container {
+.imagee-container {
   position: absolute;
   top: 0;
   left: 50%;
@@ -122,12 +122,37 @@
   z-index: 100;
 }
 
-.image-container img {
+.imagee-container img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  margin-right:10px;
 }
 
-.form-container.slide-left .image-container {
+.form-container.slide-left .imagee-container {
   transform: translateX(-100%);
+}
+.social-login {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.social-login button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.social-login button svg {
+  margin-right: 10px;
+}
+.forgot-password, .back-to-login {
+  text-align: center;
+  color: #CADF9E;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+.forgot-password:hover, .back-to-login:hover {
+  color: #e9f7cc;
 }

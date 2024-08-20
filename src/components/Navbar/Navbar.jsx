@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase"
 import acc from "../Assets/acc.png";
 import logo from "../Assets/weldinglog.png";
 import "./Navbar.css";
@@ -9,7 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [menu, setMenu] = useState("");
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const path = location.pathname;
@@ -28,16 +31,18 @@ const Navbar = () => {
     setDropdownVisible(!dropdownVisible);
   }
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    alert('Logged out successfully');
-    setDropdownVisible(false);
+  const handleLogout = async () => {
+    try {
+      await signOut(auth)
+      setDropdownVisible(false);
+      navigate('/login-signup');
+      alert("Logged out successfully");
+    } 
+    catch (error) {
+      alert("Problem logging out");
+      console.error("Error signing out ", error);
+    }
   };
-
-  const handleLogin = () => {
-    navigate('/login-signup');
-    setDropdownVisible(false);
-  }
 
   return (
     <div className="navbar">
@@ -73,12 +78,12 @@ const Navbar = () => {
         <img src={acc} alt="" onClick={toggleDropdown}/>
         {dropdownVisible && (
           <ul className="dropdown-menu">
-            {isLoggedIn ? (
+            {user ? (
               <li onClick={handleLogout}>
                 <b>Logout</b>
               </li>
             ) : (
-              <li onClick={handleLogin}>
+              <li onClick={() => navigate('/login-signup')}>
                <b>Login</b>
               </li>
             )}

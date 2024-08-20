@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AuthProvider } from "./AuthContext";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Aboutus from "./pages/Aboutus";
@@ -38,11 +39,13 @@ const AppContent = () => {
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <AppContent />
-      </BrowserRouter>
-    </div>
+    <AuthProvider>
+      <div>
+        <BrowserRouter>
+          <AppContent />
+        </BrowserRouter>
+      </div>
+    </AuthProvider>
   );
 }
 

@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../firebase";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword,} from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./LoginSignup.css";
 import x from "../components/Assets/weldman.png";
 
+
 const LoginSignup = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -13,30 +20,90 @@ const LoginSignup = () => {
   const [phone, setPhone] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const navigate = useNavigate();
+  const db = getFirestore();
+  const [forgotPasswordEmail, setForgotPasswordEmail] = useState("");
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const ensureUserInFirestore = async (user) => {
+    const userRef = doc(db, "Users", user.uid);
+    const userSnap = await getDoc(userRef);
+
+    if(!userSnap.exists()) {
+      await setDoc(userRef, {
+        email: user.email,
+        firstName: "",
+        lastName: "",
+        phone: ""
+      });
+    }
+  };
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (email && password) {
+    setIsLoading(true);
+   try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      await ensureUserInFirestore(userCredential.user);
       toast.success("Logged in successfully!");
-    } else {
+      navigate("/");
+    } catch (error) {
+      console.log("Login error", error);
       toast.error("Login failed. Please check your credentials.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-    if (
-      firstName &&
-      lastName &&
-      email &&
-      phone &&
-      password === confirmPassword
-    ) {
-      toast.success("Registered successfully!");
-    } else {
-      toast.error("Registration failed. Please check your information.");
-    }
+   if (password !== confirmPassword) {
+     return toast.error("Passwords do not match.");
+   }
+   setIsLoading(true);
+   try {
+     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+     const user = userCredential.user;
+
+     await setDoc(doc(db, "Users", user.uid), {
+      firstName: firstName,
+      lastName: lastName,
+      phone: phone,
+      email: email
+     });
+
+     toast.success("Registered successfully! Please Login.");
+     setIsLogin(true);
+
+      setFirstName("");
+      setLastName("");
+      setPhone("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+   } catch (error) {
+    console.error("Error during signup: ", error);
+     toast.error("Registration failed. Please check your information.");
+   } finally {
+    setIsLoading(false);
+   }
   };
 
+  const handleForgotPassword = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      await sendPasswordResetEmail(auth, forgotPasswordEmail);
+      toast.success("Password reset email sent. Please check your inbox")
+      setShowForgotPassword(false);
+    }
+    catch (error) {
+      console.error("Error sending password reset email.", error);
+      toast.error("Failed to send password reset email. Please try again");
+    }
+    finally {
+      setIsLoading(false);
+    }
+  }
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
@@ -46,6 +113,7 @@ const LoginSignup = () => {
       <div className={`form-container ${isLogin ? "" : "slide-left"}`}>
         <div className="form login-form">
           <h2>Login</h2>
+          {!showForgotPassword ? (
           <form onSubmit={handleLogin}>
             <input
               type="email"
@@ -61,8 +129,20 @@ const LoginSignup = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <button type="submit">Login</button>
+            <button type="submit" disabled={isLoading}>{isLoading ? 'Logging in....' : 'Login'}</button>
+            <p className="forgot-password" onClick={ () => setShowForgotPassword(true)}>Forgot Password?</p>
           </form>
+          ) : (
+            <form onSubmit={handleForgotPassword}>
+              <input type="email" placeholder="Enter your email" value={forgotPasswordEmail} onChange={ (e) => setForgotPasswordEmail(e.target.value)}
+              required
+              />
+              <button type="submit" disabled={isLoading}>
+                {isLoading ? 'Sending...' : 'Reset Password'}
+              </button>
+              <p className="back-to-login" onClick={() => setShowForgotPassword(false)}>Back To Login</p>
+            </form>
+          )}
           <p className="form-switch">
             Not Registered? <span onClick={toggleForm}>Signup</span>
           </p>
@@ -112,13 +192,13 @@ const LoginSignup = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
-            <button type="submit">Sign Up</button>
+            <button type="submit" disabled={isLoading}>{isLoading ? 'Signing Up...' : 'Sign Up'}</button>
           </form>
           <p className="form-switch">
             Registered? <span onClick={toggleForm}>Login</span>
           </p>
         </div>
-        <div className="image-container">
+        <div className="imagee-container">
           <img src={x} alt="Decorative" />
         </div>
       </div>
