@@ -1,30 +1,141 @@
 [
   {
-    "filename": "tig.png",
-    "name": "Tig Welder",
-    "description": "This is a tig welding machine",
-    "category": "Tig Machines",
+    "filename": "plasmaccut.png",
+    "name": "PLC-100 Plasma Cutter",
+    "description": "Plasma Cutter",
+    "category": "Plasma Cutters",
+    "details": ["IGBT", "30 mm Maxi - Cut", "3-Phase"]
+  },
+  {
+    "filename": "zx744.png",
+    "name": "ZX7 - 400A",
+    "description": "Arc Welder",
+    "category": "Arc Machines",
     "details": [
-      "Produces high-quality, precise welds",
-      "Ideal for welding thin materials",
-      "Capable of welding a variety of metals",
-      "Uses non-consumable tungsten electrode",
-      "Allows for control over heat input",
-      "Creates clean, visually appealing welds"
+      "Powerful 💥",
+      "Comes complete with accessories",
+      "3 Phase",
+      "2 Port",
+      "Welds all types of electrodes including Aluminium",
+      "Can weld constantly",
+      "Size 3, 4 & 5 mm electrodes."
     ]
   },
   {
-    "filename": "migmac.png",
-    "name": "Mig Welder",
-    "description": "Mig Welder 250 Amps",
+    "filename": "cut100.png",
+    "name": "Plasma Cut-100",
+    "description": "Plasma Cutter",
+    "category": "Plasma Cutters",
+    "details": [
+      "Double Module",
+      "3 Phase",
+      "IGBT",
+      "Cuts steel upto 35mm",
+      "Powerful 💥",
+      "Low Maintenance",
+      "Reasonably Priced"
+    ]
+  },
+  {
+    "filename": "HGMig500.png",
+    "name": "HG Mig 500 Separate",
+    "description": "This Mig is like a Mercedes Benz among the Mig Machines",
     "category": "Mig Machines",
     "details": [
-      "Easy to use for beginners",
-      "High welding speed",
-      "Suitable for thin to thick materials",
-      "Continuous wire feed for smooth welding",
-      "Versatile, can weld various metals",
-      "Minimal spatter production"
+      "Can use water cooled Torch for constant heavy welding",
+      "An Asset to the heavy job requirements in your workplace"
+    ]
+  },
+  {
+    "filename": "mig500.png",
+    "name": "Proson 500A Mig Welder",
+    "description": "Mig Welder",
+    "category": "Mig Machines",
+    "details": [
+      "Very Powerful",
+      "Has Separate Wire Feeder",
+      "Comes with Argon/CO2 Regulator",
+      "Head Welding Shield",
+      "Multi-puprose : Mig welding all metals",
+      "Arc welding all metals",
+      "Tig welding for stainless steel"
+    ]
+  },
+  {
+    "filename": "profilecutt.png",
+    "name": "Profile Cutter",
+    "description": "Profile Cutter",
+    "category": "Profile Cutters",
+    "details": []
+  },
+  {
+    "filename": "mig350.png",
+    "name": "Mig - 350",
+    "description": "Inverter welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "3-Phase",
+      "Has Separate Wire Feeder",
+      "10m cable extension",
+      "Digital Display",
+      "Free Regulator",
+      "Multi-purpose - Can do Mig, Tig(Steel) & Arc",
+      "Mig Capacity 0.8mm, 1.0mm & 1.2mm",
+      "On Wheels"
+    ]
+  },
+  {
+    "filename": "zx7500.png",
+    "name": "ZX7 - 500A",
+    "description": "Arc welding machine",
+    "category": "Arc Machines",
+    "details": [
+      "Powerful 💥",
+      "Comes complete with accessories",
+      "3-Phase",
+      "2 Port",
+      "Digital Display",
+      "Welds all types of electrodes including Aluminium",
+      "Can weld constantly",
+      "Welds Size 4mm, 5mm & 6mm Electrodes"
+    ]
+  },
+  {
+    "filename": "zx7200.png",
+    "name": "ZX7 - 200",
+    "description": "This is an inverter welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Single Phase Inverter",
+      "IGBT",
+      "Digital Display",
+      "Comes complete with accessories"
+    ]
+  },
+  {
+    "filename": "zx7250.png",
+    "name": "ZX7 - 250",
+    "description": "This is an inverter welding machine",
+    "category": "Inverter Machines",
+    "details": [
+      "Single Phase Inverter",
+      "IGBT D.C.",
+      "Two Port"
+    ]
+  },
+  {
+    "filename": "NB650S.png",
+    "name": "NB 650 S",
+    "description": "650A Mig welding machine",
+    "category": "Mig Machines",
+    "details": [
+      "A Powerful Mig Welder 💥",
+      "Heavy Duty",
+      "3-Phase",
+      "For mig welding 1.0mm - 1.6mm",
+      "For Arc welding up to 8mm",
+      "For tig welding ferrous metals",
+      "5m cable extension"
     ]
   },
   {
@@ -57,8 +168,8 @@
   },
   {
     "filename": "a.png",
-    "name": "Thunder Inverter Welder",
-    "description": "This is an arc welding machine",
+    "name": "Ti 250 THUNDER UK ! 🇬🇧",
+    "description": "Pocket Inverter with shoulder Belt",
     "category": "Inverter Machines",
     "details": [
       "Versatile for various welding applications",
@@ -102,14 +213,7 @@
     "name": "Ushindi Inverter Welder",
     "description": "This is an arc welding machine",
     "category": "Arc Machines",
-    "details": [
-      "Versatile for various welding applications",
-      "Uses consumable electrodes",
-      "Suitable for thick materials",
-      "High welding speed",
-      "Durable and robust construction",
-      "Can operate in outdoor and windy conditions"
-    ]
+    "details": ["Single Phase Inverter", "IGBT D.C.", "Two Port"]
   },
   {
     "filename": "f.png",
@@ -127,31 +231,17 @@
   },
   {
     "filename": "g.png",
-    "name": "Hugong Arc Welder",
-    "description": "This is an A/C arc welding machine",
+    "name": "Hugong AC 250A",
+    "description": "Transformer Welder",
     "category": "Arc Machines",
-    "details": [
-      "Versatile for various welding applications",
-      "Uses consumable electrodes",
-      "Suitable for thick materials",
-      "High welding speed",
-      "Durable and robust construction",
-      "Can operate in outdoor and windy conditions"
-    ]
+    "details": ["POWERFUL 💥", "Fan Cooled A.C. Arc", "Single Phase On Wheels"]
   },
   {
     "filename": "e.png",
-    "name": "Hugong Arc Welder 250A",
+    "name": "Hugong Power Stick",
     "description": "This is a D/C arc welding machine",
     "category": "Arc Machines",
-    "details": [
-      "Versatile for various welding applications",
-      "Uses consumable electrodes",
-      "Suitable for thick materials",
-      "High welding speed",
-      "Durable and robust construction",
-      "Can operate in outdoor and windy conditions"
-    ]
+    "details": ["POWERFUL 💥", "3 Phase, D.C. Arc", "Complete with accessories"]
   },
   {
     "filename": "d.png",
@@ -253,16 +343,13 @@
   },
   {
     "filename": "m.png",
-    "name": "Esab 200A Inverter Welder",
+    "name": "ESAB caddy arc - 200 A",
     "description": "Esab welding machine",
     "category": "Inverter Machines",
     "details": [
-      "Versatile for various welding applications",
-      "Uses consumable electrodes",
-      "Suitable for thick materials",
-      "High welding speed",
-      "Durable and robust construction",
-      "Can operate in outdoor and windy conditions"
+      "Single Phase",
+      "TIG / MMA option",
+      "Machine supplied with Arc & Tig accessories, including Argon Regulators"
     ]
   },
   {
@@ -310,10 +397,12 @@
     "description": "Plasma CUT-120 welding machine",
     "category": "Plasma Cutters",
     "details": [
-      "Cuts through electrically conductive materials",
-      "Produces clean and precise cuts",
-      "Minimal heat distortion",
-      "High cutting speed"
+      "POWERFUL 💥",
+      "3 Phase",
+      "Maximum cut on steel up to 40mm",
+      "Smooth Cutting",
+      "1 year warranty",
+      "Intelligent fan and cooler control"
     ]
   }
 ]

@@ -49,6 +49,7 @@
 .text-section ul {
   padding-left: 20px;
   margin-bottom: 1rem;
+  font-weight: 900;
 }
 
 .text-section li {

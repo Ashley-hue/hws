@@ -4,6 +4,7 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './WeldingMachines.css'
+import QuoteRequestForm from "./QuoteRequestForm";
 import tig from "../components/Assets/tig.png"
 import mig from "../components/Assets/migmac.png"
 import inverter from "../components/Assets/inverter.png"
@@ -21,6 +22,36 @@ const WeldingMachines = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
   };
+
+  const [showQuoteForm, setShowQuoteForm] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleQuoteRequest = (product) => {
+    setSelectedProduct(product);
+    setShowQuoteForm(true);
+  };
+
+   const handleQuoteSubmit = async (quoteData) => {
+     try {
+       const response = await fetch("http://localhost:5000/send-quote", {
+         method: "POST",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify(quoteData),
+       });
+
+       if (!response.ok) {
+         throw new Error("Failed to send quote request");
+       }
+
+       setShowQuoteForm(false);
+       alert("Quote request sent successfully!");
+     } catch (error) {
+       console.error("Error sending quote request:", error);
+       alert("Failed to send quote request. Please try again.");
+     }
+   };
 
   const navigate = useNavigate();
   const handleImageClick = (item) => {
@@ -209,7 +240,13 @@ const WeldingMachines = () => {
                     >
                       View Details
                     </button>
-                    <button className="request-button"> Request Quote</button>
+                    {/* <button
+                      className="request-button"
+                      onClick={() => handleQuoteRequest(image)}
+                    >
+                      {" "}
+                      Request Quote
+                    </button> */}
                   </div>
                 </div>
               ))
@@ -222,6 +259,13 @@ const WeldingMachines = () => {
           </div>
         </div>
       </div>
+      {showQuoteForm && (
+        <QuoteRequestForm
+          productName={selectedProduct.name}
+          onSubmit={handleQuoteSubmit}
+          onClose={() => setShowQuoteForm(false)}
+        />
+      )}
     </div>
   );
 }

@@ -81,6 +81,7 @@ const transporter = nodemailer.createTransport({
     pass: process.env.ADMIN_PASSWORD,
   },
 });
+
 app.post("/send", (req, res) => {
   const { fullName, phoneNumber, email, message } = req.body;
 
@@ -115,6 +116,49 @@ app.post("/send", (req, res) => {
   });
 });
 
+app.post("/send-quote", (req, res) => {
+  // if(!req.user) {
+  //   return res.status(401).send("Unauthorized");
+  // }
+  
+  const { name, email, phone, productName, message } = req.body;
+
+  const mailOptionsToAdmin = {
+    from: process.env.ADMIN_EMAIL,
+    to: process.env.ADMIN_EMAIL,
+    subject: "New Quote Request",
+    text: `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nProduct: ${productName}\nMessage: ${message}`,
+  };
+
+  const mailOptionsToCustomer = {
+    from: process.env.ADMIN_EMAIL,
+    to: email,
+    subject: "We've received your quote request",
+    text: `Dear ${name},
+
+    Thank you for requesting a quote for ${productName}. 
+    We have received your request and will get back to you shortly with more information.
+
+    Best Regards,
+    Hardware and Welding Supplies Team`,
+  };
+
+  transporter.sendMail(mailOptionsToAdmin, (error, info) => {
+    if (error) {
+      console.log("Error sending quote request to admin: ", error);
+      return res.status(500).send(error.toString());
+    }
+
+    transporter.sendMail(mailOptionsToCustomer, (error, info) => {
+      if (error) {
+        console.log("Error sending confirmation to customer:", error);
+        return res.status(500).send(error.toString());
+      }
+
+      res.status(200).send("Quote request sent successfully");
+    });
+  });
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
