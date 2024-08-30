@@ -24,6 +24,7 @@ app.get('/images', (req, res) => {
         }
         const imagesData = JSON.parse(data)
         const images = imagesData.map(image => ({
+            id: image.id,
             filename: image.filename, 
             url: `/images/${image.filename}`,
             name: image.name,
@@ -42,6 +43,7 @@ app.get("/rods", (req, res) => {
     }
     const rodsData = JSON.parse(data);
     const rods = rodsData.map((rod) => ({
+      id: rod.id,
       filename: rod.filename,
       url: `/images/${rod.filename}`,
       name: rod.name,
@@ -60,6 +62,7 @@ app.get("/accessories", (req, res) => {
     }
     const accData = JSON.parse(data);
     const accessories = accData.map((accessory) => ({
+      id: accessory.id,
       filename: accessory.filename,
       url: `/images/${accessory.filename}`,
       name: accessory.name,
@@ -158,6 +161,35 @@ app.post("/send-quote", (req, res) => {
       res.status(200).send("Quote request sent successfully");
     });
   });
+});
+
+app.get('/api/products/:productId', (req, res) => {
+  const productId = req.params.productId;
+  console.log("Requested productId:", productId);
+
+  const imagesData = JSON.parse(fs.readFileSync(imagesDataPath, 'utf8'));
+  const rodsData = JSON.parse(fs.readFileSync(rodsDataPath, 'utf8'));
+  const accData = JSON.parse(fs.readFileSync(accDataPath, 'utf8'));
+
+  const allProducts = [...imagesData, ...rodsData, ...accData];
+  console.log(
+    "All products:",
+    allProducts.map((p) => p.id)
+  );
+
+  const product = allProducts.find(p => p.id === productId);
+  console.log("Found product:", product);
+
+
+  if(product) {
+    res.json({
+      ...product,
+      url: `/images/${product.filename}`
+    });
+  }
+  else {
+    res.status(404).send('Product not found');
+  }
 });
 
 const PORT = process.env.PORT || 5000;

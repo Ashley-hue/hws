@@ -55,11 +55,8 @@ const WeldingMachines = () => {
 
   const navigate = useNavigate();
   const handleImageClick = (item) => {
-    const itemwithUrl = {
-      ...item,
-      image: `http://localhost:5000${item.url}`,
-    };
-    navigate("/description", { state: itemwithUrl });
+    console.log("Clicked item:", item);
+    navigate(`/product/${item.id}`);
   };
 
   const categories = [

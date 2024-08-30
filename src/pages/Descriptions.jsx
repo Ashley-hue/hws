@@ -1,13 +1,32 @@
-import React, {useState} from 'react'
-import { useLocation} from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import { useParams} from 'react-router-dom';
 import "./Descriptions.css"
 import { isUserLoggedIn } from '../authUtils';
 import QuoteRequestForm from './QuoteRequestForm';
 
 const Descriptions = () => {
-    const location = useLocation();
-    const { image, name, details } = location.state || {};
+    const { productId } = useParams();
+    console.log("productId from params:", productId);
+    const [ product, setProduct ] = useState(null);
     const [showQuoteForm, setShowQuoteForm] = useState(false);
+
+    useEffect(() => {
+      fetch(`http://localhost:5000/api/products/${productId}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Received data:", data);
+          setProduct(data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          // You might want to set some error state here
+        });
+    }, [productId]);
 
     const handleQuoteRequest = () => {
       if (isUserLoggedIn()) {
@@ -45,27 +64,34 @@ const Descriptions = () => {
       }
     };
     
+    if(!product) return <div>Loading...</div>;
+
   return (
     <div className="description-container">
       <div className="description-items">
         <div className="image-section">
-          <img src={image} alt={name} className="grandiose" />
+          <img
+            src={product.url}
+            alt={product.filename}
+            className="grandiose"
+          />
         </div>
         <div className="text-section">
-          <h1>{name}</h1>
+          <h1>{product.name}</h1>
           <ul>
-            {details &&
-              details.map((detail, index) => <li key={index}>{detail}</li>)}
+            {product.details &&
+              product.details.map((detail, index) => (
+                <li key={index}>{detail}</li>
+              ))}
           </ul>
           <button className="btn" onClick={handleQuoteRequest}>
-            {" "}
             Request For Quote
           </button>
         </div>
       </div>
       {showQuoteForm && (
         <QuoteRequestForm
-          productName={name}
+          productName={product.name}
           onSubmit={handleQuoteSubmit}
           onClose={() => setShowQuoteForm(false)}
         />

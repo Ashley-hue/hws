@@ -1,5 +1,6 @@
 [
   {
+    "id": "ACC-001-A",
     "filename": "eaglemet.png",
     "name": "Eagle Helmet",
     "description": "Auto-darkening Welding Helmet",
@@ -11,6 +12,7 @@
     ]
   },
   {
+    "id": "ACC-002-B",
     "filename": "oxyreg.png",
     "name": "Oxygen Regulator",
     "description": "O2 Regulator",
@@ -22,6 +24,7 @@
     ]
   },
   {
+    "id": "ACC-003-C",
     "filename": "acereg.png",
     "name": "Acetylene Regulator",
     "description": "Acetylene Regulator",
@@ -33,6 +36,7 @@
     ]
   },
   {
+    "id": "ACC-004-D",
     "filename": "coreg.png",
     "name": "CO2 Regulator",
     "description": "CO2 Regulator",
@@ -44,6 +48,7 @@
     ]
   },
   {
+    "id": "ACC-005-E",
     "filename": "weldinggloves.png",
     "name": "D&H Gloves",
     "description": "Welding Gloves",
@@ -51,6 +56,7 @@
     "details": ["Heat-resistant", "Durable leather", "Comfortable fit"]
   },
   {
+    "id": "ACC-006-F",
     "filename": "glovy.png",
     "name": "Gloves",
     "description": "Welding Gloves",
@@ -58,6 +64,7 @@
     "details": ["Heat-resistant", "Durable leather", "Comfortable fit"]
   },
   {
+    "id": "ACC-007-G",
     "filename": "weldapr.png",
     "name": "Apron",
     "description": "Welding Apron",
@@ -69,6 +76,7 @@
     ]
   },
   {
+    "id": "ACC-008-H",
     "filename": "apron.png",
     "name": "Leather Apron",
     "description": "Welding Apron",
@@ -80,6 +88,7 @@
     ]
   },
   {
+    "id": "ACC-009-I",
     "filename": "Wirebrush.png",
     "name": "Wire Brush",
     "description": "Wire Brush",
@@ -91,6 +100,7 @@
     ]
   },
   {
+    "id": "ACC-010-J",
     "filename": "darkg.png",
     "name": "Goggles",
     "description": "Flip Type Dark Goggles",
@@ -98,6 +108,7 @@
     "details": ["Adjustable darkness", "Flip-up design", "Comfortable fit"]
   },
   {
+    "id": "ACC-011-K",
     "filename": "electrodeholder.png",
     "name": "Electrode Holder",
     "description": "Crocodile Electrode Holder",
@@ -105,6 +116,7 @@
     "details": ["Firm grip", "Heat-resistant", "Durable construction"]
   },
   {
+    "id": "ACC-012-L",
     "filename": "measuretape.png",
     "name": "Measuring Tape",
     "description": "Stanley Measuring Tape",
@@ -116,6 +128,7 @@
     ]
   },
   {
+    "id": "ACC-013-M",
     "filename": "loctite.png",
     "name": "Loctite 271",
     "description": "Loctite",
@@ -129,6 +142,7 @@
     ]
   },
   {
+    "id": "ACC-014-N",
     "filename": "grindisc.png",
     "name": "Grinding Disc 7 Inch",
     "description": "Grinding Disc",
@@ -141,6 +155,7 @@
     ]
   },
   {
+    "id": "ACC-015-O",
     "filename": "grind.png",
     "name": "Grinding Disc  4 Inch",
     "description": "Grinding Disc",
@@ -153,6 +168,7 @@
     ]
   },
   {
+    "id": "ACC-016-P",
     "filename": "cutdis.png",
     "name": "Cutting Disc 7 Inch",
     "description": "Cutting Disc",
@@ -165,6 +181,7 @@
     ]
   },
   {
+    "id": "ACC-017-Q",
     "filename": "cuttd.png",
     "name": "Cutting Disc 12 Inch",
     "description": "Cutting Disc",
@@ -177,6 +194,7 @@
     ]
   },
   {
+    "id": "ACC-018-R",
     "filename": "shield.png",
     "name": "Plain Helmet",
     "description": "Welding Helmet",
@@ -184,6 +202,7 @@
     "details": ["Adjustable shading", "Lightweight", "High impact resistance"]
   },
   {
+    "id": "ACC-019-S",
     "filename": "darkweldingglass.png",
     "name": "Dark Welding Glass",
     "description": "Dark Welding Glass",
@@ -196,6 +215,7 @@
     ]
   },
   {
+    "id": "ACC-020-T",
     "filename": "clearweldglass.png",
     "name": "Clear Welding Glass",
     "description": "Clear Welding Glass",
@@ -208,6 +228,7 @@
     ]
   },
   {
+    "id": "ACC-021-U",
     "filename": "goggles.png",
     "name": "Clear Goggles",
     "description": "Clear Welding Goggles",
@@ -215,6 +236,7 @@
     "details": ["Clear visibility", "Durable lenses", "Comfortable fit"]
   },
   {
+    "id": "ACC-022-V",
     "filename": "goggle.png",
     "name": "Goggles",
     "description": "Flip Type Dark Goggles",
@@ -222,6 +244,7 @@
     "details": ["Adjustable darkness", "Flip-up design", "Comfortable fit"]
   },
   {
+    "id": "ACC-023-W",
     "filename": "abradisk.png",
     "name": "Abra Cutting Disc",
     "description": "Cutting Disc 5 Inch",
@@ -234,6 +257,7 @@
     ]
   },
   {
+    "id": "ACC-024-X",
     "filename": "boschgrind.png",
     "name": "Bosch Angle Grinder",
     "description": "Grinder",
@@ -246,6 +270,7 @@
     ]
   },
   {
+    "id": "ACC-025-Y",
     "filename": "emtopgrind.png",
     "name": "Emtop Angle Grinder",
     "description": "Grinder",
@@ -258,6 +283,7 @@
     ]
   },
   {
+    "id": "ACC-026-Z",
     "filename": "bheater.png",
     "name": "Bosch Heat Gun",
     "description": "Heater",
@@ -270,6 +296,7 @@
     ]
   },
   {
+    "id": "ACC-027-AA",
     "filename": "sander.png",
     "name": "Bosch Orbital Sander",
     "description": "Bosch Sander",
@@ -282,6 +309,7 @@
     ]
   },
   {
+    "id": "ACC-028-AB",
     "filename": "solarhelmet.png",
     "name": "Solar Helmet",
     "description": "Solar Helmet Yellow & Green",
@@ -294,6 +322,7 @@
     ]
   },
   {
+    "id": "ACC-029-AC",
     "filename": "weldgel.png",
     "name": "Tip Guard Paste",
     "description": "Welding Gel",
@@ -301,6 +330,7 @@
     "details": ["Protects torch tips", "Easy application", "Prolongs tip life"]
   },
   {
+    "id": "ACC-030-AD",
     "filename": "clamp.png",
     "name": "Earth Clamp",
     "description": "Grey Earth Clamp",
@@ -313,6 +343,7 @@
     ]
   },
   {
+    "id": "ACC-031-AE",
     "filename": "rnbpipe.png",
     "name": "Twin Hose Pipe",
     "description": "Red & Blue Twin Hose Pipe",
@@ -324,6 +355,7 @@
     ]
   },
   {
+    "id": "ACC-032-AF",
     "filename": "piipe.png",
     "name": "Welding Cable",
     "description": "Black Welding Cable",
@@ -335,6 +367,7 @@
     ]
   },
   {
+    "id": "ACC-033-AG",
     "filename": "574.png",
     "name": "Loctite 574",
     "description": "Loctite",
@@ -347,6 +380,7 @@
     ]
   },
   {
+    "id": "ACC-034-AH",
     "filename": "603.png",
     "name": "Loctite 603",
     "description": "Loctite",
@@ -359,6 +393,7 @@
     ]
   },
   {
+    "id": "ACC-035-AI",
     "filename": "609.png",
     "name": "Loctite 609",
     "description": "Loctite",
@@ -371,6 +406,7 @@
     ]
   },
   {
+    "id": "ACC-036-AJ",
     "filename": "638.png",
     "name": "Loctite 638",
     "description": "Loctite",
@@ -383,6 +419,7 @@
     ]
   },
   {
+    "id": "ACC-037-AK",
     "filename": "641.png",
     "name": "Loctite 641",
     "description": "Loctite",
@@ -395,6 +432,7 @@
     ]
   },
   {
+    "id": "ACC-038-AL",
     "filename": "241.png",
     "name": "Loctite 241",
     "description": "Loctite",
@@ -402,6 +440,7 @@
     "details": ["", "", "", ""]
   },
   {
+    "id": "ACC-040-AN",
     "filename": "loctite641.png",
     "name": "Loctite 641",
     "description": "Loctite",
@@ -414,6 +453,7 @@
     ]
   },
   {
+    "id": "ACC-041-AO",
     "filename": "cabletie.png",
     "name": "Cable Tie",
     "description": "White Cable Tie",
@@ -425,6 +465,7 @@
     ]
   },
   {
+    "id": "ACC-042-AP",
     "filename": "loctite326.png",
     "name": "Loctite 326",
     "description": "Loctite",
@@ -437,6 +478,7 @@
     ]
   },
   {
+    "id": "ACC-043-AQ",
     "filename": "spray.png",
     "name": "Welding Spray",
     "description": "Wurth Welding Spray",
@@ -448,6 +490,7 @@
     ]
   },
   {
+    "id": "ACC-044-AR",
     "filename": "bluetungsten.png",
     "name": "Tungsten",
     "description": "Blue Tungsten",
@@ -455,6 +498,7 @@
     "details": ["High-quality tungsten", "Long-lasting"]
   },
   {
+    "id": "ACC-045-AS",
     "filename": "redtungsten.png",
     "name": "Tungsten",
     "description": "Red Tungsten",
@@ -462,6 +506,7 @@
     "details": ["High-quality tungsten", "Long-lasting"]
   },
   {
+    "id": "ACC-046-AT",
     "filename": "nozzlegel.png",
     "name": "Nozzle Gel",
     "description": "Wesaf Anti Spatter Nozzle Gel",
@@ -469,6 +514,7 @@
     "details": ["Protects torch tips", "Easy application", "Prolongs tip life"]
   },
   {
+    "id": "ACC-047-AU",
     "filename": "flapdisc.png",
     "name": "Pegatec 4 1/2 Inch",
     "description": "Cutting Disc",
@@ -481,6 +527,7 @@
     ]
   },
   {
+    "id": "ACC-048-AV",
     "filename": "reddisc.png",
     "name": "300 Fibre Disc",
     "description": "Fibre Disc",
@@ -492,6 +539,7 @@
     ]
   },
   {
+    "id": "ACC-049-AW",
     "filename": "fibrerust.png",
     "name": "3000 Fibre Disc",
     "description": "Fibre Disc",
@@ -503,6 +551,7 @@
     ]
   },
   {
+    "id": "ACC-050-AX",
     "filename": "blackdisc.png",
     "name": "1000 Fibre Disc",
     "description": "Fibre Disc",
@@ -514,6 +563,7 @@
     ]
   },
   {
+    "id": "ACC-051-AY",
     "filename": "fibreblue.png",
     "name": "2000 Fibre Disc",
     "description": "Fibre Disc",
@@ -525,6 +575,7 @@
     ]
   },
   {
+    "id": "ACC-052-AZ",
     "filename": "gdiffusor.png",
     "name": "Gas Diffusor",
     "description": "Diffusor",
@@ -536,6 +587,7 @@
     ]
   },
   {
+    "id": "ACC-053-BA",
     "filename": "diffusor.png",
     "name": "Gas diffusor",
     "description": "diffusor",
@@ -547,6 +599,7 @@
     ]
   },
   {
+    "id": "ACC-054-BB",
     "filename": "gas-diffusor.png",
     "name": "Gas Diffusor",
     "description": "Diffusor",
@@ -558,6 +611,7 @@
     ]
   },
   {
+    "id": "ACC-055-BC",
     "filename": "ceramic-nozzle.png",
     "name": "Ceramic Nozzle",
     "description": "Pink Ceramic Nozzle",
@@ -569,6 +623,7 @@
     ]
   },
   {
+    "id": "ACC-056-BD",
     "filename": "backcap.png",
     "name": "Back Cap",
     "description": "Back Cap",
@@ -576,6 +631,7 @@
     "details": ["Durable construction", "Secure fit", "Heat-resistant"]
   },
   {
+    "id": "ACC-057-BE",
     "filename": "collet.png",
     "name": "Collet",
     "description": "Collet",
@@ -587,6 +643,7 @@
     ]
   },
   {
+    "id": "ACC-058-BF",
     "filename": "colletbody.png",
     "name": "Collet Body",
     "description": "Collet Body",
@@ -598,6 +655,7 @@
     ]
   },
   {
+    "id": "ACC-059-BG",
     "filename": "contacttip.png",
     "name": "Contact Tip",
     "description": "Contact Tip",
@@ -609,6 +667,7 @@
     ]
   },
   {
+    "id": "ACC-060-BH",
     "filename": "insulator.png",
     "name": "Insulator",
     "description": "Insulator",
@@ -620,6 +679,7 @@
     ]
   },
   {
+    "id": "ACC-061-BI",
     "filename": "contacttipholder.png",
     "name": "Contact Tip Holder",
     "description": "Contact Tip Holder",
@@ -631,6 +691,7 @@
     ]
   },
   {
+    "id": "ACC-062-BJ",
     "filename": "swanneck.png",
     "name": "Swan Neck",
     "description": "Swan Neck",
@@ -642,6 +703,7 @@
     ]
   },
   {
+    "id": "ACC-063-BK",
     "filename": "tigtorch.png",
     "name": "Tig torch",
     "description": "Tig Torch",
@@ -655,6 +717,7 @@
     ]
   },
   {
+    "id": "ACC-064-BL",
     "filename": "migtorch.png",
     "name": "Mig Torch",
     "description": "Mig Torch",
@@ -669,6 +732,7 @@
     ]
   },
   {
+    "id": "ACC-065-BM",
     "filename": "firehelmet.png",
     "name": "Fire Welding Helmet",
     "description": "Auto-darkening Welding Helmet",
@@ -680,6 +744,7 @@
     ]
   },
   {
+    "id": "ACC-066-BN",
     "filename": "gauge.png",
     "name": "Welding Gauge",
     "description": "Welding Gauge",
@@ -687,6 +752,7 @@
     "details": ["High Accuracy", "Durable construction", "Easy-to-read"]
   },
   {
+    "id": "ACC-067-BO",
     "filename": "wgauge.png",
     "name": "Welding Gauge",
     "description": "Welding Gauge",
@@ -694,6 +760,7 @@
     "details": ["High Accuracy", "Durable construction", "Easy-to-read"]
   },
   {
+    "id": "ACC-068-BP",
     "filename": "orweldpipe.png",
     "name": "Welding Cable",
     "description": "Orange Welding Cable",
@@ -705,6 +772,7 @@
     ]
   },
   {
+    "id": "ACC-069-BQ",
     "filename": "orpipe.png",
     "name": "Welding Cable",
     "description": "Orange Welding Cable",
@@ -716,6 +784,7 @@
     ]
   },
   {
+    "id": "ACC-070-BR",
     "filename": "aircompress.png",
     "name": "Air Compressor",
     "description": "Air Compressor",
