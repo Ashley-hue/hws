@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./WeldingMachines.css";
 import "./WeldingRods.css";
+import QuoteRequestForm from "./QuoteRequestForm";
 import advrods from "../components/Assets/adsrod.png";
 import adrod from "../components/Assets/welro.png";
 import migwire from "../components/Assets/migg.png";
@@ -22,13 +23,11 @@ const WeldingRods = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
   };
+
   const navigate = useNavigate();
   const handleImageClick = (item) => {
-    const itemwithUrl = {
-      ...item,
-      image: `http://localhost:5000${item.url}`
-    };
-    navigate('/description', {state: itemwithUrl});
+    console.log("Clicked item:", item);
+    navigate(`/product/${item.id}`);
   };
 
 
@@ -67,6 +66,35 @@ const WeldingRods = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [rods, setRods] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [showQuoteForm, setShowQuoteForm] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleQuoteRequest = (product) => {
+    setSelectedProduct(product);
+    setShowQuoteForm(true);
+  };
+
+  const handleQuoteSubmit = async (quoteData) => {
+    try {
+      const response = await fetch("http://localhost:5000/send-quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(quoteData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send quote request");
+      }
+
+      setShowQuoteForm(false);
+      alert("Quote request sent successfully!");
+    } catch (error) {
+      console.error("Error sending quote request:", error);
+      alert("Failed to send quote request. Please try again.");
+    }
+  };
 
   useEffect(() => {
     fetch("http://localhost:5000/rods")
@@ -229,19 +257,25 @@ const WeldingRods = () => {
                     >
                       View Details
                     </button>
-                    <button className="request-button"> Request Quote</button>
                   </div>
                 </div>
               ))
             ) : (
               <div className="no-products">
-                <p>Well, this is awkward...</p>
+                <p>Sorry! Not in stock!</p>
                 <img src={cry} alt="crying" />
               </div>
             )}
           </div>
         </div>
       </div>
+      {showQuoteForm && (
+        <QuoteRequestForm
+          productName={selectedProduct.name}
+          onSubmit={handleQuoteSubmit}
+          onClose={() => setShowQuoteForm(false)}
+        />
+      )}
     </div>
   );
 };

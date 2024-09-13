@@ -249,7 +249,7 @@ const WeldingMachines = () => {
               ))
             ) : (
               <div className="no-products">
-                <p>Well, this is awkward...</p>
+                <p>Sorry! Not in stock</p>
                 <img src={cry} alt="crying" />
               </div>
             )}
