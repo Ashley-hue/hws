@@ -490,7 +490,7 @@
     "filename": "tig300acdc.png",
     "name": "TIG-300 AC/DC",
     "description": "Inverter TIG/MMA welder with gas point",
-    "category": "Inverter Machines",
+    "category": "Tig Machines",
     "details": ["Arc Force", "Single Phase", "Anti-Stick", "Hot Start", "Arc Stability", "Smooth Welding"]
   }
 ]
