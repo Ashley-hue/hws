@@ -82,12 +82,7 @@ const WeldingAccessories = () => {
   const [accessories, setaccessories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const handleQuoteRequest = (product) => {
-    setSelectedProduct(product);
-    setShowQuoteForm(true);
-  };
+  const [selectedProduct] = useState(null);
 
   const handleQuoteSubmit = async (quoteData) => {
     try {
@@ -376,7 +371,6 @@ const WeldingAccessories = () => {
                       {" "}
                       View Details{" "}
                     </button>
-                    <button className="request-button"> Request Quote</button>
                   </div>
                 </div>
               ))

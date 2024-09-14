@@ -67,12 +67,7 @@ const WeldingRods = () => {
   const [rods, setRods] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [showQuoteForm, setShowQuoteForm] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const handleQuoteRequest = (product) => {
-    setSelectedProduct(product);
-    setShowQuoteForm(true);
-  };
+  const [selectedProduct] = useState(null);
 
   const handleQuoteSubmit = async (quoteData) => {
     try {

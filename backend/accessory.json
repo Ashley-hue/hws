@@ -338,8 +338,7 @@
     "details": [
       "Strong grip",
       "Durable material",
-      "Reliable electrical contact",
-      ""
+      "Reliable electrical contact"
     ]
   },
   {
@@ -373,10 +372,10 @@
     "description": "Loctite",
     "category": "Glue",
     "details": [
-      "Seals close-fitting joints between rigid metal faces ",
-      " High oil tolerance ",
-      " Forms a flexible, durable seal ",
-      " Ideal for flange sealing"
+      "Seals close-fitting joints between rigid metal faces",
+      "High oil tolerance",
+      "Forms a flexible, durable seal",
+      "Ideal for flange sealing"
     ]
   },
   {
@@ -386,10 +385,10 @@
     "description": "Loctite",
     "category": "Glue",
     "details": [
-      "High-strength retaining compound ",
-      "Tolerates minor surface contamination ",
-      " Ideal for bonding cylindrical fitting parts ",
-      " Prevents loosening due to vibration"
+      "High-strength retaining compound",
+      "Tolerates minor surface contamination",
+      "Ideal for bonding cylindrical fitting parts",
+      "Prevents loosening due to vibration"
     ]
   },
   {
@@ -437,7 +436,7 @@
     "name": "Loctite 241",
     "description": "Loctite",
     "category": "Glue",
-    "details": ["", "", "", ""]
+    "details": ["Medium-strength retaining compound", "Ideal for cylindrical parts requiring disassembly", "Tolerates slight contamination", "Provides controlled strength"]
   },
   {
     "id": "ACC-040-AN",
