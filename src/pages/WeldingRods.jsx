@@ -49,14 +49,6 @@ const WeldingRods = () => {
   //   { id: "Laser", label: "Laser" },
   // ];
 
-  // const sizeCategories = [
-  //   { id: "0.8", label: "0.8mm" },
-  //   { id: "1.6", label: "1.6mm" },
-  //   { id: "2.4", label: "2.4mm" },
-  //   { id: "3.2", label: "3.2mm" },
-  //   { id: "4.0", label: "4.0mm" },
-  // ];
-
   const [collapsedSections, setCollapsedSections] = useState({
     rods: false,
     brand: false,
