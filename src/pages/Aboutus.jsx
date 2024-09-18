@@ -7,6 +7,10 @@ import values from "../components/Assets/ourvalues.jpeg";
 import director from "../components/Assets/meetdir.png"
 import assidir from "../components/Assets/meetas.png";
 import ceo from "../components/Assets/john.png"
+import fb from "../components/Assets/fb.png";
+import ig from "../components/Assets/ig.png";
+import x from "../components/Assets/x.png";
+import logo from "../components/Assets/weldinglog.png";
 const Aboutus = () => {
   return (
     <div>
@@ -100,6 +104,49 @@ const Aboutus = () => {
             <h2>John Gitonga</h2>
             <h5>C.E.O</h5>
             <p>0724621977</p>
+          </div>
+        </div>
+      </div>
+      <div className="footer-container">
+        <div className="footer-first">
+          <div className="footer-content">
+            <img src={logo} alt="" className="footlogo" />
+            <h4>Hardware & Welding Supplies</h4>
+          </div>
+          <div className="footer-description">
+            <p>
+              Whether you have a question, feedback, or need assistance, our
+              team is here to help. Your satisfaction is our priority, and we
+              look forward to hearing from you soon!
+            </p>
+          </div>
+        </div>
+        <div className="footer-second">
+          <h4>Services</h4>
+          <ul>
+            <li>Equipment Sales</li>
+            <li>Machine Repair</li>
+            <li>Custom Fabrication</li>
+            <li>Consultation</li>
+            <li>Maintenance Plans</li>
+            <li>FAQs</li>
+          </ul>
+        </div>
+        <div className="footer-third">
+          <h4>Work Hours</h4>
+          <p>Mon - Fri 9:00 AM - 4:00 PM</p>
+          <p>Sat 9:00 AM - 1:00 PM</p>
+          <div>
+            <h4>Follow Us</h4>
+            <div className="follow-us">
+              <a href="https://www.facebook.com/HardwareandWelding/">
+                <img src={fb} alt="" />
+              </a>
+              <a href="https://www.instagram.com/hardware_and_welding/">
+                <img src={ig} alt="" className="follow-icon" />
+              </a>
+              <img src={x} alt="" className="follow-icon" />
+            </div>
           </div>
         </div>
       </div>
