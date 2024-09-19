@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
-import { sendPasswordResetEmail } from "firebase/auth";
+import { sendPasswordResetEmail} from "firebase/auth";
 import { auth } from "../firebase";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword,} from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword} from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./LoginSignup.css";
@@ -24,6 +26,7 @@ const LoginSignup = () => {
   const db = getFirestore();
   const [forgotPasswordEmail, setForgotPasswordEmail] = useState("");
   const [showForgotPassword, setShowForgotPassword] = useState(false);
+
   const ensureUserInFirestore = async (user) => {
     const userRef = doc(db, "Users", user.uid);
     const userSnap = await getDoc(userRef);
@@ -37,7 +40,6 @@ const LoginSignup = () => {
       });
     }
   };
-
   const handleLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -48,7 +50,23 @@ const LoginSignup = () => {
       navigate("/");
     } catch (error) {
       console.log("Login error", error);
-      toast.error("Login failed. Please check your credentials.");
+      switch (error.code) {
+        case "auth/invalid-credential":
+          toast.error("Invalid email or password. Please try again.");
+          break;
+        case "auth/user-disabled":
+          toast.error(
+            "This account has been disabled. Please contact support."
+          );
+          break;
+        case "auth/too-many-requests":
+          toast.error(
+            "Too many failed login attempts. Please try again later."
+          );
+          break;
+        default:
+          toast.error("An unexpected error occurred. Please try again.");
+      }  
     } finally {
       setIsLoading(false);
     }
@@ -82,7 +100,13 @@ const LoginSignup = () => {
       setConfirmPassword("");
    } catch (error) {
     console.error("Error during signup: ", error);
-     toast.error("Registration failed. Please check your information.");
+    if(error.code === "auth/email-already-in-use") {
+      toast.error("An account with this email already exists. Please log in");
+      setIsLogin(true);
+    }
+    else {
+      toast.error("Registration failed. Please check your information.");
+    }   
    } finally {
     setIsLoading(false);
    }

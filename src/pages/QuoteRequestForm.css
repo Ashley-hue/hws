@@ -55,3 +55,22 @@
 .quote-request-form button[type="button"]:hover {
   background-color: #5a6268;
 }
+.quantity-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.quantity-field label {
+    margin-bottom: 5px;
+}
+
+.quantity-field input {
+    width: 60px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
