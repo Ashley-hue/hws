@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./WeldingMachines.css";
 // import "./WeldingRods.css";
-import QuoteRequestForm from "./QuoteRequestForm";
 import grindr from "../components/Assets/grinder.png";
 import gloves from "../components/Assets/welgloves.png";
 import helmet from "../components/Assets/welhel.png";
@@ -79,39 +80,67 @@ const WeldingAccessories = () => {
   });
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [accessories, setaccessories] = useState([]);
+  const [accessories, setAccessories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const [showQuoteForm, setShowQuoteForm] = useState(false);
-  const [selectedProduct] = useState(null);
 
-  const handleQuoteSubmit = async (quoteData) => {
-    try {
-      const response = await fetch("http://localhost:5000/send-quote", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(quoteData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to send quote request");
-      }
-
-      setShowQuoteForm(false);
-      alert("Quote request sent successfully!");
-    } catch (error) {
-      console.error("Error sending quote request:", error);
-      alert("Failed to send quote request. Please try again.");
-    }
-  };
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/accessories")
-      .then((response) => response.json())
-      .then((data) => setaccessories(data))
-      .catch((error) => console.error("Error fetching images: ", error));
+    const fetchImages = async () => {
+      try {
+        const accessoryCategories = [
+          "Glue",
+          "Pipe",
+          "Cable Tie",
+          "Grinder",
+          "Regulator",
+          "Mig Parts",
+          "Tig Parts",
+          "Gauge",
+          "Brush",
+          "Clamps",
+          "Tape",
+          "Electrode Holder",
+          "Compressor",
+          "Helmet",
+          "Gloves",
+          "Apron",
+          "Goggles",
+          "Glass",
+          "Tungsten",
+          "Flux",
+          "Gel",
+          "Welding Spray",
+          "Fibre Disc",
+          "Cutting",
+          "Grinding"
+        ];
+
+        const imagesRef = collection(db, "images");
+        const q = query(imagesRef, where("category", "in", accessoryCategories));
+
+        const querySnapshot = await getDocs(q);
+        const imagesData = querySnapshot.docs.map((doc) => {
+          const data = doc.data();
+          return {
+            id: doc.id,
+            ...data,
+            url: data.downloadUrl,
+          };
+        });
+
+        setAccessories(imagesData);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching images: ", error);
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+    fetchImages();
   }, []);
+
 
   const toggleCollapse = (section) => {
     setCollapsedSections((prevState) => ({
@@ -144,6 +173,13 @@ const WeldingAccessories = () => {
       }
     });
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div>
@@ -361,7 +397,7 @@ const WeldingAccessories = () => {
                     <h4>{accessory.name}</h4>
                     <p>{accessory.description}</p>
                     <img
-                      src={`http://localhost:5000${accessory.url}`}
+                      src={accessory.downloadUrl}
                       alt={accessory.filename}
                     />
                     <button
@@ -383,13 +419,6 @@ const WeldingAccessories = () => {
           </div>
         </div>
       </div>
-      {showQuoteForm && (
-        <QuoteRequestForm
-          productName={selectedProduct.name}
-          onSubmit={handleQuoteSubmit}
-          onClose={() => setShowQuoteForm(false)}
-        />
-      )}
     </div>
   );
 };
