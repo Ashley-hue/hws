@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./WeldingMachines.css";
 import "./WeldingRods.css";
-import QuoteRequestForm from "./QuoteRequestForm";
 import advrods from "../components/Assets/adsrod.png";
 import adrod from "../components/Assets/welro.png";
 import migwire from "../components/Assets/migg.png";
@@ -41,53 +42,55 @@ const WeldingRods = () => {
     { id: "Migwire", label: "Mig Wire" },
   ];
 
-  // const brandCategories = [
-  //   { id: "AGI", label: "AGI" },
-  //   { id: "Maruthi", label: "Maruthi" },
-  //   { id: "D&H", label: "D&H" },
-  //   { id: "Senor", label: "Senor" },
-  //   { id: "Laser", label: "Laser" },
-  // ];
-
   const [collapsedSections, setCollapsedSections] = useState({
     rods: false,
     brand: false,
     size: false,
   });
   
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [rods, setRods] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const [showQuoteForm, setShowQuoteForm] = useState(false);
-  const [selectedProduct] = useState(null);
 
-  const handleQuoteSubmit = async (quoteData) => {
-    try {
-      const response = await fetch("http://localhost:5000/send-quote", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(quoteData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to send quote request");
-      }
-
-      setShowQuoteForm(false);
-      alert("Quote request sent successfully!");
-    } catch (error) {
-      console.error("Error sending quote request:", error);
-      alert("Failed to send quote request. Please try again.");
-    }
-  };
 
   useEffect(() => {
-    fetch("http://localhost:5000/rods")
-      .then((response) => response.json())
-      .then((data) => setRods(data))
-      .catch((error) => console.error("Error fetching images: ", error));
+    const fetchImages = async () => {
+      try {
+        const rodCategories = [
+          "6010",
+          "E6013",
+          "E7018",
+          "Cast Iron",
+          "Flyer",
+          "Aluminium",
+          "Migwire"
+        ];
+
+        const imagesRef = collection(db, "images");
+        const q = query(imagesRef, where("category", "in", rodCategories));
+
+        const querySnapshot = await getDocs(q);
+        const imagesData = querySnapshot.docs.map((doc) => {
+          const data = doc.data();
+          return {
+            id: doc.id,
+            ...data,
+            url: data.downloadUrl,
+          };
+        });
+
+        setRods(imagesData);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching images: ", error);
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+    fetchImages();
   }, []);
 
   const toggleCollapse = (section) => {
@@ -120,6 +123,13 @@ const WeldingRods = () => {
       }
     });
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div>
@@ -235,7 +245,7 @@ const WeldingRods = () => {
                     <h4>{rod.name}</h4>
                     <p>{rod.description}</p>
                     <img
-                      src={`http://localhost:5000${rod.url}`}
+                      src={rod.downloadUrl}
                       alt={rod.filename}
                     />
                     <button
@@ -256,13 +266,6 @@ const WeldingRods = () => {
           </div>
         </div>
       </div>
-      {showQuoteForm && (
-        <QuoteRequestForm
-          productName={selectedProduct.name}
-          onSubmit={handleQuoteSubmit}
-          onClose={() => setShowQuoteForm(false)}
-        />
-      )}
     </div>
   );
 };
