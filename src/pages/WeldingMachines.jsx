@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { db } from '../firebase'
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './WeldingMachines.css'
-import QuoteRequestForm from "./QuoteRequestForm";
 import tig from "../components/Assets/tig.png"
 import mig from "../components/Assets/migmac.png"
 import inverter from "../components/Assets/inverter.png"
@@ -23,30 +24,10 @@ const WeldingMachines = () => {
     pauseOnHover: true,
   };
 
-  const [showQuoteForm, setShowQuoteForm] = useState(false);
-  const [selectedProduct] = useState(null);
+  const [images, setImages] = useState([]);
+  const [loading, setLoading ] = useState(true);
+  const [error, setError] = useState(null);
 
-   const handleQuoteSubmit = async (quoteData) => {
-     try {
-       const response = await fetch("http://localhost:5000/send-quote", {
-         method: "POST",
-         headers: {
-           "Content-Type": "application/json",
-         },
-         body: JSON.stringify(quoteData),
-       });
-
-       if (!response.ok) {
-         throw new Error("Failed to send quote request");
-       }
-
-       setShowQuoteForm(false);
-       alert("Quote request sent successfully!");
-     } catch (error) {
-       console.error("Error sending quote request:", error);
-       alert("Failed to send quote request. Please try again.");
-     }
-   };
 
   const navigate = useNavigate();
   const handleImageClick = (item) => {
@@ -67,15 +48,50 @@ const WeldingMachines = () => {
 
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [images, setImages] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/images')
-    .then(response => response.json())
-    .then(data => setImages(data))
-    .catch(error => console.error('Error fetching images: ', error));
-  }, [])
+    const fetchImages = async () => {
+      try {
+
+        const machineCategories = [
+          "Mig Machines",
+          "Tig Machines",
+          "Arc Machines",
+          "Inverter Machines",
+          "Multi-welders",
+          "Plasma Cutters",
+          "Profile Cutters",
+          "Welding Oven"
+        ];
+
+        const imagesRef = collection(db, 'images');
+        const q = query (
+          imagesRef, 
+          where('category', 'in', machineCategories)
+        );
+
+        const querySnapshot = await getDocs(q);
+        const imagesData = querySnapshot.docs.map(doc => {
+          const data = doc.data();
+          return {
+            id: doc.id,
+            ...data,
+            url: data.downloadUrl
+          };
+        });
+
+        setImages(imagesData);
+        setLoading(false);
+
+      } catch (error) {
+        console.error("Error fetching images: ", error);
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+    fetchImages();
+  }, []);
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
@@ -101,6 +117,13 @@ const WeldingMachines = () => {
         return prevSelectedCategories.filter(category => category !== value);
       }
     });
+  }
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+  if (error) {
+    return <div>Error: {error}</div>
   }
 
   return (
@@ -223,7 +246,7 @@ const WeldingMachines = () => {
                     <h4>{image.name}</h4>
                     <p>{image.description}</p>
                     <img
-                      src={`http://localhost:5000${image.url}`}
+                      src={image.downloadUrl}
                       alt={image.filename}
                     />
                     <button
@@ -232,13 +255,6 @@ const WeldingMachines = () => {
                     >
                       View Details
                     </button>
-                    {/* <button
-                      className="request-button"
-                      onClick={() => handleQuoteRequest(image)}
-                    >
-                      {" "}
-                      Request Quote
-                    </button> */}
                   </div>
                 </div>
               ))
@@ -251,13 +267,6 @@ const WeldingMachines = () => {
           </div>
         </div>
       </div>
-      {showQuoteForm && (
-        <QuoteRequestForm
-          productName={selectedProduct.name}
-          onSubmit={handleQuoteSubmit}
-          onClose={() => setShowQuoteForm(false)}
-        />
-      )}
     </div>
   );
 }
