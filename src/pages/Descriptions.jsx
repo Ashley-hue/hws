@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import "./Descriptions.css";
 import { isUserLoggedIn } from "../authUtils";
 import QuoteRequestForm from "./QuoteRequestForm";
@@ -12,7 +13,6 @@ const Descriptions = () => {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
 
   const { productId } = useParams();
-  const navigate = useNavigate();
   const db = getFirestore();
 
    useEffect(() => {
@@ -26,21 +26,16 @@ const Descriptions = () => {
 
        try {
          console.log("Fetching product with ID:", productId);
-         const q = query(
-           collection(db, "images"),
-           where("id", "==", productId)
-         );
-         const querySnapshot = await getDocs(q);
+         const docRef = doc(db, "images", productId);
+         const docSnap = await getDoc(docRef);
 
-         if (!querySnapshot.empty) {
-           const productData = querySnapshot.docs[0].data();
-           console.log("Product data:", productData);
-           setProduct(productData);
-         } else {
-           console.log("No product found with ID:", productId);
-           setError(`No product found with ID: ${productId}`);
-           // Optionally, redirect to a 404 page
-           // navigate('/404');
+         if (docSnap.exists()) {
+          const productData = { id: docSnap.id, ...docSnap.data() };
+          setProduct(productData);
+         }
+         else {
+          console.log("No product found with ID: ", productId);
+          setError(`No product found with ID: ${productId}`);
          }
        } catch (error) {
          console.error("Error fetching product data: ", error);
@@ -51,7 +46,7 @@ const Descriptions = () => {
      };
 
      fetchProduct();
-   }, [productId, db, navigate]);
+   }, [productId, db]);
 
   const handleQuoteRequest = () => {
     if (isUserLoggedIn()) {
@@ -63,17 +58,12 @@ const Descriptions = () => {
 
   const handleQuoteSubmit = async (quoteData) => {
     try {
-      const response = await fetch("http://localhost:5000/send-quote", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(quoteData),
+      const quotesRef = collection(db, 'Quotes');
+      await addDoc(quotesRef, {
+        ...quoteData,
+        productId: productId,
+        timestamp: serverTimestamp(),
       });
-
-      if (!response.ok) {
-        throw new Error("Failed to send quote request");
-      }
 
       setShowQuoteForm(false);
       alert("Quote request sent successfully!");
