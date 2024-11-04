@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { doc, getDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, serverTimestamp, query, where, getDocs } from "firebase/firestore";
 import "./Descriptions.css";
 import { isUserLoggedIn } from "../authUtils";
 import QuoteRequestForm from "./QuoteRequestForm";
@@ -26,12 +25,21 @@ const Descriptions = () => {
 
        try {
          console.log("Fetching product with ID:", productId);
-         const docRef = doc(db, "images", productId);
-         const docSnap = await getDoc(docRef);
 
-         if (docSnap.exists()) {
-          const productData = { id: docSnap.id, ...docSnap.data() };
+         const imagesRef = collection(db, "images");
+         const q = query(imagesRef, where("id", "==", productId));
+
+         const querySnapshot = await getDocs(q);
+
+         if (!querySnapshot.empty) {
+          const doc = querySnapshot.docs[0];
+          const productData = {
+            firestoreId: doc.id,
+            ...doc.data()
+          };
+          console.log("Found product: ", productData);
           setProduct(productData);
+        
          }
          else {
           console.log("No product found with ID: ", productId);
@@ -39,7 +47,7 @@ const Descriptions = () => {
          }
        } catch (error) {
          console.error("Error fetching product data: ", error);
-         setError(`Error fetching product data: ${error.message}`);
+         setError(`Error fectching product data: ${error.message}`);
        } finally {
          setLoading(false);
        }
