@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { getAuth } from "firebase/auth";
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  collection,
+  addDoc,
+  serverTimestamp,
+} from "firebase/firestore";
+import { db } from "../firebase";
+import emailjs from '@emailjs/browser';
 import "./QuoteRequestForm.css";
 
 const QuoteRequestForm = ({ productName, onSubmit, onClose }) => {
@@ -17,7 +25,6 @@ const QuoteRequestForm = ({ productName, onSubmit, onClose }) => {
       const auth = getAuth();
       const user = auth.currentUser;
       if (user) {
-        const db = getFirestore();
         const userRef = doc(db, "Users", user.uid);
         const userSnap = await getDoc(userRef);
 
@@ -46,10 +53,56 @@ const QuoteRequestForm = ({ productName, onSubmit, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+
     try {
-      await onSubmit({ name, email, phone, productName, message, quantity });
+      const auth = getAuth();
+      const user = auth.currentUser;
+
+      if (!user) {
+        throw new Error("User must be logged in to submit a quote");
+      }
+
+      const quoteData = {
+        userId: user.uid,
+        name,
+        email,
+        phone,
+        productName,
+        message,
+        quantity,
+        status: "pending",
+        createdAt: serverTimestamp(),
+        adminNotified: false,
+      };
+
+      await addDoc(collection(db, "Quotes"), quoteData);
+
+      const templateParams = {
+        from_name: name,
+        product_name: productName,
+        message: message,
+        phone: phone,
+        quantity: quantity,
+        email: email,
+        to_name: "Admin"
+      };
+
+      await emailjs.send(
+        "service_zgshx1g",
+        "template_njcev5c",
+        templateParams,
+        "bWck62oVKMzlyVoa6"
+      );
+
+      if (onSubmit) {
+        onSubmit(quoteData);
+      }
+
+      alert("Quote submitted successfully!");
+      onClose();
     } catch (error) {
-      console.error("Error submitting quote request:", error);
+      console.error("Error submitting quote: ", error);
+      alert("Error submitting quote. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -96,7 +149,7 @@ const QuoteRequestForm = ({ productName, onSubmit, onClose }) => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Additional details or questions"
-        ></textarea>
+        />
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Sending..." : "Send Quote Request"}
         </button>
