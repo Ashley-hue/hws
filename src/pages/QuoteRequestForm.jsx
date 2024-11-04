@@ -11,29 +11,45 @@ import { db } from "../firebase";
 import emailjs from '@emailjs/browser';
 import "./QuoteRequestForm.css";
 
-const QuoteRequestForm = ({ productName, onSubmit, onClose }) => {
-  const [name, setName] = useState("");
+const QuoteRequestForm = ({ name, onSubmit, onClose }) => {  // Changed from productName to name
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [quantityErr, setQuantityErr] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  // Validate required props
+  useEffect(() => {
+    if (!name) {
+      setError("Product name is required");
+      console.error("QuoteRequestForm: name prop is required");
+    } else {
+      setError("");
+    }
+  }, [name]);
 
   useEffect(() => {
     const fetchUserData = async () => {
-      const auth = getAuth();
-      const user = auth.currentUser;
-      if (user) {
-        const userRef = doc(db, "Users", user.uid);
-        const userSnap = await getDoc(userRef);
+      try {
+        const auth = getAuth();
+        const user = auth.currentUser;
+        if (user) {
+          const userRef = doc(db, "Users", user.uid);
+          const userSnap = await getDoc(userRef);
 
-        if (userSnap.exists()) {
-          const userData = userSnap.data();
-          setName(userData.name || "");
-          setEmail(userData.email || "");
-          setPhone(userData.phone || "");
+          if (userSnap.exists()) {
+            const userData = userSnap.data();
+            setUserName(userData.name || "");
+            setEmail(userData.email || "");
+            setPhone(userData.phone || "");
+          }
         }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+        setError("Failed to load user data");
       }
     };
     fetchUserData();
@@ -50,11 +66,23 @@ const QuoteRequestForm = ({ productName, onSubmit, onClose }) => {
     }
   };
 
+  const validateFormData = () => {
+    if (!name) {
+      throw new Error("Product name is required");
+    }
+    if (!userName || !email || !phone || !quantity) {
+      throw new Error("All fields are required");
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
     try {
+      validateFormData();
+
       const auth = getAuth();
       const user = auth.currentUser;
 
@@ -64,10 +92,10 @@ const QuoteRequestForm = ({ productName, onSubmit, onClose }) => {
 
       const quoteData = {
         userId: user.uid,
-        name,
+        userName,  // Changed from name to userName to avoid conflict
         email,
         phone,
-        productName,
+        name,      // This is the product name
         message,
         quantity,
         status: "pending",
@@ -75,11 +103,19 @@ const QuoteRequestForm = ({ productName, onSubmit, onClose }) => {
         adminNotified: false,
       };
 
-      await addDoc(collection(db, "Quotes"), quoteData);
+      // Validate all required fields in quoteData
+      Object.entries(quoteData).forEach(([key, value]) => {
+        if (value === undefined) {
+          throw new Error(`Missing required field: ${key}`);
+        }
+      });
+
+      const docRef = await addDoc(collection(db, "Quotes"), quoteData);
+      console.log("Quote document written with ID:", docRef.id);
 
       const templateParams = {
-        from_name: name,
-        product_name: productName,
+        from_name: userName,
+        product_name: name,
         message: message,
         phone: phone,
         quantity: quantity,
@@ -102,20 +138,25 @@ const QuoteRequestForm = ({ productName, onSubmit, onClose }) => {
       onClose();
     } catch (error) {
       console.error("Error submitting quote: ", error);
-      alert("Error submitting quote. Please try again.");
+      setError(error.message || "Error submitting quote. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  if (!name) {
+    return <div className="error-message">Cannot load quote form: Product name is required</div>;
+  }
+
   return (
     <div className="quote-request-form">
-      <h2>Request a Quote for {productName}</h2>
+      <h2>Request a Quote for {name}</h2>
+      {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
           placeholder="Your Name"
           required
         />

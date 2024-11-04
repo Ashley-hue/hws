@@ -114,7 +114,7 @@ const Descriptions = () => {
       </div>
       {showQuoteForm && (
         <QuoteRequestForm
-          productName={product.name}
+          name={product.name}
           onSubmit={handleQuoteSubmit}
           onClose={() => setShowQuoteForm(false)}
         />
