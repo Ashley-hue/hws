@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getFirestore, collection, addDoc, serverTimestamp, query, where, getDocs } from "firebase/firestore";
+import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
 import "./Descriptions.css";
 import { isUserLoggedIn } from "../authUtils";
 import QuoteRequestForm from "./QuoteRequestForm";
@@ -64,27 +64,6 @@ const Descriptions = () => {
     }
   };
 
-  const handleQuoteSubmit = async (quoteData) => {
-    try {
-      const quotesRef = collection(db, 'Quotes');
-      await addDoc(quotesRef, {
-        ...quoteData,
-        productId: productId,
-        timestamp: serverTimestamp(),
-      });
-
-      setShowQuoteForm(false);
-      alert("Quote request sent successfully!");
-    } catch (error) {
-      console.error("Error sending quote request:", error);
-      if (error.response && error.response.status === 401) {
-        alert("Please log in to send a quote request");
-      } else {
-        alert("Failed to send quote request. Please try again.");
-      }
-    }
-  };
-
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (!product) return <div>No product found</div>;
@@ -115,7 +94,6 @@ const Descriptions = () => {
       {showQuoteForm && (
         <QuoteRequestForm
           name={product.name}
-          onSubmit={handleQuoteSubmit}
           onClose={() => setShowQuoteForm(false)}
         />
       )}
