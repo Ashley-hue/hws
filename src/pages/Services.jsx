@@ -79,7 +79,7 @@ const Services = () => {
           <img src={phonecall} alt="Phone Icon" className="phoneicon" />
           <div className="text">
             <p>GET A FREE CONSULTATION</p>
-            <h4>0724621977</h4>
+            <h4>0708960136</h4>
           </div>
           <div className="appointdeats">
             <p>
