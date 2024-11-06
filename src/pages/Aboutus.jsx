@@ -6,7 +6,7 @@ import ourmission from "../components/Assets/missions.jpeg";
 import values from "../components/Assets/ourvalues.jpeg";
 import director from "../components/Assets/meetdir.png"
 import assidir from "../components/Assets/meetas.png";
-import ceo from "../components/Assets/john.png"
+import ceo from "../components/Assets/ceo.jpeg"
 import fb from "../components/Assets/fb.png";
 import ig from "../components/Assets/ig.png";
 import x from "../components/Assets/x.png";
@@ -101,9 +101,9 @@ const Aboutus = () => {
           </div>
           <div className="theteam">
             <img src={ceo} alt="" />
-            <h2>John Gitonga</h2>
-            <h5>C.E.O</h5>
-            <p>0724621977</p>
+            <h2>Dan Ogutu</h2>
+            <h5>Sales</h5>
+            <p>0721669353</p>
           </div>
         </div>
       </div>
