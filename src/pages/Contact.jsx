@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 import contactbg from "../components/Assets/conntbg.jpeg";
 import mapimg from "../components/Assets/contbg.jpeg";
@@ -7,17 +7,17 @@ import addressicon from "../components/Assets/addressicon.png";
 import phoneicon from "../components/Assets/phoneicon.png";
 import webicon from "../components/Assets/webicon.png";
 import emailicon from "../components/Assets/emailicon.png";
-import logo from "../components/Assets/weldinglog.png"
-import fb from "../components/Assets/fb.png"
-import ig from "../components/Assets/ig.png"
-import x from "../components/Assets/x.png"
+import logo from "../components/Assets/weldinglog.png";
+import fb from "../components/Assets/fb.png";
+import ig from "../components/Assets/ig.png";
+import x from "../components/Assets/x.png";
 
 const Contact = () => {
   const [formValues, setFormValues] = useState({
     fullName: "",
     phoneNumber: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -25,46 +25,61 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e) => {
-    const {name, value} = e.target;
-    setFormValues({...formValues, [name]: value });
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const validateForm = () => {
+    const validationErrors = {};
+    if (!formValues.fullName)
+      validationErrors.fullName = "Full Name is required.";
+    if (!formValues.phoneNumber)
+      validationErrors.phoneNumber = "Phone Number is required.";
+    if (!formValues.email) validationErrors.email = "Email is required.";
+    if (!formValues.message) validationErrors.message = "Message is required.";
+    setErrors(validationErrors);
+    return Object.keys(validationErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validationErrors = {};
 
-    if (!formValues.fullName) {
-      validationErrors.fullName = "Full Name is required.";
-    }
-    if (!formValues.phoneNumber) {
-      validationErrors.phoneNumber = "Phone Number is required.";
-    }
-    if (!formValues.email) {
-      validationErrors.email = "Email is required.";
-    }
-    if (!formValues.message) {
-      validationErrors.message = "Message is required.";
-    }
-    // if (!formValues.phoneNumber < 10 || !formValues.phoneNumber > 10) {
-    //   validationErrors.message = "Invalid phone number";
-    // }
-
-    setErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length === 0) {
+    if (validateForm()) {
       setIsLoading(true);
 
-      axios.post("http://localhost:5000/send", formValues)
-      .then(response => {
-        setIsLoading(false);
-        setSuccessMessage("Your message has been sent successfully!");
-        setFormValues({ fullName: "", phoneNumber: "", email: "", message: "" })
-      })
-      .catch(error => {
-        setIsLoading(false);
-        console.log("There was an error sending the message!", error);
-        setSuccessMessage("There was an error sending your message. Please try again.");
-      });
+      const templateParams = {
+        to_name: "Hardware & Welding Supplies",
+        from_name: formValues.fullName,
+        phone_number: formValues.phoneNumber,
+        email: formValues.email,
+        message: formValues.message,
+      };
+
+      emailjs
+        .send(
+          "service_zgshx1g",
+          "template_x7ekjn5",
+          templateParams,
+          "bWck62oVKMzlyVoa6"
+        )
+        .then(() => {
+          setIsLoading(false);
+          setSuccessMessage("Your message has been sent successfully!");
+          setFormValues({
+            fullName: "",
+            phoneNumber: "",
+            email: "",
+            message: "",
+          });
+          setErrors({});
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          console.error("There was an error sending the message! ", error);
+          setSuccessMessage(
+            "There was an error sending your message. Please try again."
+          );
+        });
     }
   };
 
